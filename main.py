@@ -28,7 +28,7 @@ from pathlib import Path
 # ── Make project root importable ─────────────────────────────────────────────
 sys.path.insert(0, str(Path(__file__).parent))
 from util.common import load_config
-from model.user_graph import build_user_init_graph
+from model.user_agent import build_user_init_graph
 
 
 def parse_args():

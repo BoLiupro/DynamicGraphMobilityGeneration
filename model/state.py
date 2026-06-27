@@ -1,9 +1,12 @@
 """
-User Agent State Definition
-============================
-Typed state dict passed between every LangGraph node in the
-user-agent initialization pipeline.  All values use plain Python
-types (dict/list/int/str/float) so the state is directly JSON-serializable.
+State Definitions
+==================
+Two TypedDicts for the two pipeline stages:
+
+  UserInitState      — initialization pipeline (5 nodes, prior-based)
+  UserInferenceState — per-timestep inference (LLM-based mobility decision)
+
+All values use plain Python types so state is directly JSON-serializable.
 """
 from typing import Any, Dict, List, Optional
 from typing_extensions import TypedDict
@@ -36,6 +39,8 @@ class UserInitState(TypedDict, total=False):
     flow_from: Dict[str, Dict[str, float]]
     # Per-community mean population: str(comm_id) → {str(region_id): mean_pop}
     comm_region_pop: Dict[str, Dict[str, float]]
+    # Flat population map for gravity search: int(loc_id) → mean population
+    pop_map: Dict[int, float]
 
     # ── Train user community assignments ─────────────────────────────────
     train_user_start_loc: Dict[str, int]   # user_id → region_id at hour 0
@@ -54,3 +59,38 @@ class UserInitState(TypedDict, total=False):
 
     # ── Error signal ─────────────────────────────────────────────────────
     error: Optional[str]
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Per-timestep inference state — one user, one hour
+# ─────────────────────────────────────────────────────────────────────────────
+
+class UserInferenceState(TypedDict, total=False):
+    # ── Static context (set once per inference call) ──────────────────────
+    city: str
+    cfg:  Dict[str, Any]
+    user_profile: Dict[str, Any]     # single user's init-phase profile
+
+    # ── Reference data (loaded from priors) ───────────────────────────────
+    coord_map:  Dict[int, List[float]]        # loc_id → [lon, lat]
+    poi_map:    Dict[int, str]                # loc_id → POI type
+    pop_map:    Dict[int, float]              # loc_id → mean population
+    flow_from:  Dict[str, Dict[str, float]]   # str(rid) → {str(rid): flow}
+
+    # ── Per-step runtime ──────────────────────────────────────────────────
+    current_location: int    # current location at start of this timestep
+    current_hour:     int    # 0–23
+
+    # ── Intermediate (filled by nodes) ────────────────────────────────────
+    plan_segment: Dict[str, Any]  # plan segment covering current_hour
+    action:       str             # "STAY" or "MOVE_AB"
+    move_purpose: str             # target POI type (from MOVE segment)
+    move_dist:    str             # dist_label from MOVE segment (e.g. "1-2km")
+    candidates:   List[Dict]      # spatial gravity top-k with flow_out added
+    llm_response: str             # raw LLM output string
+    decision:     Dict[str, Any]  # parsed {"next_location_id": int, "reason": str}
+
+    # ── Output ────────────────────────────────────────────────────────────
+    next_location: int   # decided next location
+    next_hour:     int   # hour after this action completes
+    error:         Optional[str]

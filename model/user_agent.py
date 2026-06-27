@@ -1,601 +1,290 @@
 """
-User Agent Node Functions
-==========================
-Each function is a LangGraph node that transforms the UserInitState.
+User Agent — LangGraph Definitions
+=====================================
+Provides two compiled graphs:
 
-Pipeline order:
-  load_priors          — load pattern files from extracted_pattern/
-  assign_communities   — derive P(comm|start_loc) from train; assign to test users
-  generate_plans       — generate 24h daily plans via Markov chain + motif stats
-  find_co_mobility     — find users with similar plans within the same community
-  save_output          — write user_profiles to JSON files
+  build_user_init_graph()      — 5-node initialization pipeline (prior-based, no LLM)
+  build_user_inference_graph() — 4-node per-timestep inference (LLM-based)
+
+Initialization graph (user_init.py nodes):
+  load_priors → assign_communities → generate_plans → find_co_mobility → save_output
+
+Inference graph (nodes defined in this file):
+  check_plan → [STAY: apply_decision]
+             → [MOVE: get_candidates → llm_decide → apply_decision]
+  → END
 """
 
-import ast
-import json
-import random
 import sys
-from collections import defaultdict
 from pathlib import Path
-from typing import Any, Dict, List
+from typing import Any, Dict
 
-import numpy as np
-import pandas as pd
+from langgraph.graph import StateGraph, END
 
-# ── allow importing from project root ────────────────────────────────────────
 sys.path.insert(0, str(Path(__file__).parent.parent))
-from util.common import build_loc_lookup, load_config, haversine, dist_bin
-from model.state import UserInitState
+
+from model.state import UserInitState, UserInferenceState
+from model.user_init import (
+    node_load_priors,
+    node_assign_communities,
+    node_generate_plans,
+    node_find_co_mobility,
+    node_save_output,
+)
+
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# INTERNAL HELPERS
+# INITIALIZATION GRAPH  (unchanged logic from original user_graph.py)
 # ═══════════════════════════════════════════════════════════════════════════════
 
-def _parse_motif_key(raw: str):
-    """Parse a string like \"('STAY', 'POI', '1h')\" into a tuple."""
-    return ast.literal_eval(raw)
-
-
-def _build_comm_stay_probs(motif_per_comm: Dict) -> Dict[str, Dict[str, float]]:
+def build_user_init_graph():
     """
-    Per-community STAY duration distribution.
-    Returns: { str(comm_id): { stay_label: probability } }
+    Build and compile the user initialization StateGraph.
+    Runs five sequential nodes to produce 24h plan profiles for all test users.
     """
-    result = {}
-    for comm_id, counts in motif_per_comm.items():
-        stay_counts: Dict[str, int] = defaultdict(int)
-        for raw_key, cnt in counts.items():
-            mtype, _, label = _parse_motif_key(raw_key)
-            if mtype == "STAY":
-                stay_counts[label] += cnt
-        total = sum(stay_counts.values())
-        result[str(comm_id)] = {
-            lbl: cnt / total for lbl, cnt in stay_counts.items()
-        } if total > 0 else {"1h": 1.0}
-    return result
+    graph = StateGraph(UserInitState)
+
+    graph.add_node("load_priors",        node_load_priors)
+    graph.add_node("assign_communities", node_assign_communities)
+    graph.add_node("generate_plans",     node_generate_plans)
+    graph.add_node("find_co_mobility",   node_find_co_mobility)
+    graph.add_node("save_output",        node_save_output)
+
+    graph.set_entry_point("load_priors")
+    graph.add_edge("load_priors",        "assign_communities")
+    graph.add_edge("assign_communities", "generate_plans")
+    graph.add_edge("generate_plans",     "find_co_mobility")
+    graph.add_edge("find_co_mobility",   "save_output")
+    graph.add_edge("save_output",        END)
+
+    return graph.compile()
 
 
-def _build_comm_move_ratio(motif_per_comm: Dict) -> Dict[str, float]:
+# ═══════════════════════════════════════════════════════════════════════════════
+# INFERENCE GRAPH NODES
+# Each node receives the full UserInferenceState and returns a partial update.
+# ═══════════════════════════════════════════════════════════════════════════════
+
+def node_check_plan(state: UserInferenceState) -> Dict:
     """
-    P(MOVE_AB) for each community, as a motif-level transition probability.
-    Only counts MOVE_AB motifs (not complex multi-hop motifs like CHAIN_ABC, ROUND_ABA)
-    so the probability matches the plan generator's simplified STAY/MOVE_AB model.
+    Node 1 — Check daily plan to determine action at current_hour.
+
+    Finds the plan segment covering current_hour and sets:
+      action       = "STAY" or "MOVE_AB"
+      plan_segment = the matching segment dict
+      move_purpose = target POI (only for MOVE_AB)
+      move_dist    = distance label (only for MOVE_AB)
+
+    For STAY: also sets next_location and next_hour immediately so
+    apply_decision can be skipped via conditional edge.
     """
-    result = {}
-    for comm_id, counts in motif_per_comm.items():
-        n_stay   = sum(v for k, v in counts.items() if _parse_motif_key(k)[0] == "STAY")
-        n_moveAB = sum(v for k, v in counts.items() if _parse_motif_key(k)[0] == "MOVE_AB")
-        total    = n_stay + n_moveAB
-        result[str(comm_id)] = n_moveAB / total if total > 0 else 0.05
-    return result
+    hour    = state["current_hour"]
+    plan    = state["user_profile"]["plan"]
+    user_id = state["user_profile"]["user_id"][:8]
 
-
-def _build_flow_from(pop_flow: List[Dict]) -> Dict[str, Dict[str, float]]:
-    """
-    Aggregate edge flow across all 24 hours.
-    Returns: { str(from_rid): { str(to_rid): total_mean_flow } }
-    """
-    agg: Dict[str, Dict[str, float]] = defaultdict(lambda: defaultdict(float))
-    for slot in pop_flow:
-        for edge_key, flow in slot["edge_flow_mean"].items():
-            fr, to = edge_key.split(",")
-            agg[fr][to] += flow
-    return {k: dict(v) for k, v in agg.items()}
-
-
-def _build_comm_region_pop(pop_flow: List[Dict],
-                           region_to_comm: Dict[str, int]) -> Dict[str, Dict[str, float]]:
-    """
-    Mean population per region, grouped by community.
-    Returns: { str(comm_id): { str(region_id): mean_pop_over_24h } }
-    """
-    pop_sum:   Dict[str, float] = defaultdict(float)
-    pop_count: Dict[str, int]   = defaultdict(int)
-    for slot in pop_flow:
-        for rid_str, pop in slot["population_mean"].items():
-            pop_sum[rid_str]   += pop
-            pop_count[rid_str] += 1
-    mean_pop = {rid: pop_sum[rid] / pop_count[rid] for rid in pop_sum}
-
-    result: Dict[str, Dict[str, float]] = defaultdict(dict)
-    for rid_str, pop in mean_pop.items():
-        cid = region_to_comm.get(rid_str)
-        if cid is not None:
-            result[str(cid)][rid_str] = pop
-    return dict(result)
-
-
-def _sample_stay_duration(comm_id: int,
-                          comm_stay_probs: Dict[str, Dict[str, float]],
-                          remaining: int,
-                          rng: random.Random) -> int:
-    """
-    Sample a stay duration (hours) from the community's stay distribution.
-    Caps at `remaining` so the plan doesn't exceed 24 hours.
-    """
-    label_to_range = {
-        "1h":     (1, 1),
-        "2-3h":   (2, 3),
-        "4-12h":  (4, 12),
-        "13-24h": (13, 24),
-    }
-    probs = comm_stay_probs.get(str(comm_id), {"1h": 1.0})
-    labels = list(probs.keys())
-    weights = [probs[l] for l in labels]
-    chosen = rng.choices(labels, weights=weights, k=1)[0]
-    lo, hi = label_to_range.get(chosen, (1, 1))
-    hi_eff = min(hi, remaining)
-    lo_eff = min(lo, hi_eff)          # ensure lo <= hi_eff
-    dur = rng.randint(lo_eff, hi_eff) if lo_eff <= hi_eff else hi_eff
-    return max(1, dur)
-
-
-def _sample_destination(from_loc: int,
-                        comm_id: int,
-                        flow_from: Dict[str, Dict[str, float]],
-                        comm_region_pop: Dict[str, Dict[str, float]],
-                        comm_to_locs: Dict[str, List[int]],
-                        rng: random.Random) -> int:
-    """
-    Sample next location for a MOVE step.
-    Priority: flow-based neighbors within same community → population-weighted.
-    Falls back to uniform random from community locations.
-    """
-    comm_locs = set(comm_to_locs.get(str(comm_id), []))
-    if not comm_locs:
-        return from_loc
-
-    # Use flow data: destinations within same community
-    from_flows = flow_from.get(str(from_loc), {})
-    candidates = {
-        int(to): w for to, w in from_flows.items()
-        if int(to) in comm_locs and int(to) != from_loc
-    }
-    if candidates:
-        locs, weights = zip(*candidates.items())
-        return rng.choices(list(locs), weights=list(weights), k=1)[0]
-
-    # Fallback: population-weighted from community locations
-    pop_dict = comm_region_pop.get(str(comm_id), {})
-    pop_candidates = {
-        int(r): pop_dict.get(r, 1.0)
-        for r in map(str, comm_locs) if int(r) != from_loc
-    }
-    if pop_candidates:
-        locs, weights = zip(*pop_candidates.items())
-        return rng.choices(list(locs), weights=list(weights), k=1)[0]
-
-    # Last resort: any other location in community
-    others = [l for l in comm_locs if l != from_loc]
-    return rng.choice(others) if others else from_loc
-
-
-def _sample_next_motif(current: str,
-                       global_transition: Dict[str, Dict[str, float]],
-                       comm_move_ratio: float,
-                       rng: random.Random) -> str:
-    """
-    Sample next motif state (motif-level, not hourly).
-
-    After STAY  → use community's observed MOVE_AB ratio directly as P(MOVE).
-    After MOVE  → use global hourly transition (MOVE events are 1h, so hourly ≈ motif-level).
-    """
-    if current == "STAY":
-        p_move = comm_move_ratio
-        p_stay = 1.0 - p_move
-        return rng.choices(["STAY", "MOVE_AB"], weights=[p_stay, p_move], k=1)[0]
-    else:  # MOVE_AB
-        row    = global_transition.get("MOVE_AB", {"STAY": 0.826, "MOVE_AB": 0.174})
-        p_move = row.get("MOVE_AB", 0.174)
-        p_stay = row.get("STAY",    0.826)
-        return rng.choices(["STAY", "MOVE_AB"], weights=[p_stay, p_move], k=1)[0]
-
-
-def _generate_single_plan(user_id: str,
-                          start_loc: int,
-                          comm_id: int,
-                          state: "UserInitState",
-                          rng: random.Random) -> List[Dict]:
-    """
-    Generate a 24h mobility plan for one user using a Markov-chain over
-    STAY/MOVE motifs, with durations sampled from community statistics.
-
-    Returns: list of segments covering exactly 24 hours.
-    Each segment is a dict with:
-      start_hour, end_hour, duration_hours, motif_type
-      STAY → location, poi_type
-      MOVE_AB → from_location, to_location, from_poi, to_poi
-    """
-    plan: List[Dict] = []
-    hour     = 0
-    loc      = start_loc
-    motif    = "STAY"   # users start in STAY state at hour 0
-
-    while hour < 24:
-        remaining = 24 - hour
-
-        if motif == "STAY":
-            dur = _sample_stay_duration(
-                comm_id, state["comm_stay_probs"], remaining, rng
-            )
-            plan.append({
-                "start_hour":     hour,
-                "end_hour":       hour + dur,
-                "duration_hours": dur,
-                "motif_type":     "STAY",
-                "poi_type":       state["poi_map"].get(loc, "Unknown"),
-            })
-            hour += dur
-
-        else:   # MOVE_AB — always 1 hour
-            next_loc = _sample_destination(
-                loc, comm_id,
-                state["flow_from"], state["comm_region_pop"], state["comm_to_locs"],
-                rng,
-            )
-            # Compute haversine distance between grid cell centroids
-            coord = state.get("coord_map", {})
-            src = coord.get(loc)
-            dst = coord.get(next_loc)
-            if src and dst:
-                d_km = haversine(src[0], src[1], dst[0], dst[1])
-            else:
-                d_km = 0.0
-            plan.append({
-                "start_hour":     hour,
-                "end_hour":       hour + 1,
-                "duration_hours": 1,
-                "motif_type":     "MOVE_AB",
-                "from_poi":       state["poi_map"].get(loc, "Unknown"),
-                "to_poi":         state["poi_map"].get(next_loc, "Unknown"),
-                "dist_km":        round(d_km, 2),
-                "dist_label":     dist_bin(d_km, state["cfg"]),
-            })
-            loc   = next_loc
-            hour += 1
-
-        # Transition to next motif state
-        if hour < 24:
-            comm_move = state["comm_move_ratio"].get(str(comm_id), 0.05)
-            motif = _sample_next_motif(
-                motif, state["global_transition"], comm_move, rng
-            )
-
-    return plan
-
-
-def _plan_to_vector(plan: List[Dict]) -> np.ndarray:
-    """Encode a plan as a 24-dim int vector: 0=STAY, 1=MOVE_AB."""
-    vec = np.zeros(24, dtype=np.int8)
+    # Find the segment that covers this hour
+    segment = None
     for seg in plan:
-        if seg["motif_type"] == "MOVE_AB":
-            for h in range(seg["start_hour"], min(seg["end_hour"], 24)):
-                vec[h] = 1
-    return vec
+        if seg["start_hour"] <= hour < seg["end_hour"]:
+            segment = seg
+            break
+
+    if segment is None:
+        # Past end of plan — stay put
+        print(f"  [check_plan] user {user_id}: hour {hour} past plan end → STAY")
+        return {
+            "action":       "STAY",
+            "plan_segment": {},
+            "next_location": state["current_location"],
+            "next_hour":     hour + 1,
+        }
+
+    action = segment["motif_type"]
+    print(f"  [check_plan] user {user_id}: hour {hour:02d} → {action}", end="")
+
+    result: Dict[str, Any] = {"action": action, "plan_segment": segment}
+
+    if action == "STAY":
+        print(f"  (stay until h{segment['end_hour']:02d}, poi={segment['poi_type']})")
+        result["next_location"] = state["current_location"]
+        result["next_hour"]     = segment["end_hour"]
+        result["move_purpose"]  = ""
+        result["move_dist"]     = ""
+    else:  # MOVE_AB
+        purpose = segment.get("to_poi", "Unknown")
+        dist    = segment.get("dist_label", "1-2km")
+        print(f"  (move to {purpose}, ~{dist})")
+        result["move_purpose"] = purpose
+        result["move_dist"]    = dist
+
+    return result
 
 
-def _jaccard_similarity(v1: np.ndarray, v2: np.ndarray) -> float:
-    """Jaccard similarity on the set of MOVE hours (value == 1)."""
-    both   = int(np.sum((v1 == 1) & (v2 == 1)))
-    either = int(np.sum((v1 == 1) | (v2 == 1)))
-    if either == 0:
-        return 0.0   # both stay all day → no shared movement → not co-mobile
-    return both / either
+def node_get_candidates(state: UserInferenceState) -> Dict:
+    """
+    Node 2 (MOVE branch only) — Spatial gravity search for candidate destinations.
+
+    Calls spatial_gravity_search from util.common and enriches each candidate
+    with its flow_out value from the flow_from lookup table.
+    """
+    from util.common import spatial_gravity_search
+
+    current  = state["current_location"]
+    user_id  = state["user_profile"]["user_id"][:8]
+
+    candidates = spatial_gravity_search(
+        current_loc=current,
+        dist_label=state["move_dist"],
+        purpose=state["move_purpose"],
+        coord_map=state["coord_map"],
+        poi_map=state["poi_map"],
+        pop_map=state["pop_map"],
+        cfg=state["cfg"],
+    )
+
+    # Enrich candidates with flow_out from origin perspective of destination
+    flow_from = state.get("flow_from", {})
+    for c in candidates:
+        c["flow_out"] = round(sum(flow_from.get(str(c["loc_id"]), {}).values()), 2)
+
+    print(f"  [get_candidates] user {user_id}: {len(candidates)} candidates "
+          f"(purpose={state['move_purpose']}, dist={state['move_dist']})")
+    for c in candidates:
+        print(f"    loc {c['loc_id']:5d}  {c['poi_type']:32s}  "
+              f"dist={c['dist_km']:.2f}km  gravity={c['gravity_score']:.3f}  "
+              f"flow_out={c['flow_out']:.1f}")
+
+    return {"candidates": candidates}
+
+
+def node_llm_decide(state: UserInferenceState) -> Dict:
+    """
+    Node 3 (MOVE branch only) — Call LLM to choose next location.
+
+    Reads LLM config from state['cfg']['llm'], builds the move-decision prompt,
+    calls ChatOpenAI, and stores the raw response string.
+    """
+    from langchain_openai import ChatOpenAI
+    from util.prompt import build_move_decision_prompt
+
+    cfg     = state["cfg"]
+    llm_cfg = cfg.get("llm", {})
+    user_id = state["user_profile"]["user_id"][:8]
+
+    llm = ChatOpenAI(
+        model       = llm_cfg.get("model",       "gpt-4o-mini"),
+        api_key     = llm_cfg.get("api_key"),
+        base_url    = llm_cfg.get("base_url",    "https://api.openai-proxy.org/v1"),
+        temperature = llm_cfg.get("temperature", 0.2),
+        max_tokens  = llm_cfg.get("max_tokens",  150),
+    )
+
+    # Current location POI for context
+    current_poi = state["poi_map"].get(state["current_location"], "Unknown")
+
+    prompt = build_move_decision_prompt(
+        city              = state["city"],
+        community_profile = state["user_profile"].get("community_poi_profile", "Unknown"),
+        from_poi          = current_poi,
+        to_poi            = state["move_purpose"],
+        dist_label        = state["move_dist"],
+        candidates        = state.get("candidates", []),
+        current_hour      = state["current_hour"],
+    )
+
+    print(f"  [llm_decide] user {user_id}: calling {llm_cfg.get('model', 'gpt-4o-mini')} ...")
+    response = llm.invoke(prompt)
+    raw      = response.content
+    print(f"  [llm_decide] response: {raw[:120]}")
+
+    return {"llm_response": raw}
+
+
+def node_apply_decision(state: UserInferenceState) -> Dict:
+    """
+    Node 4 — Apply the decision and advance the simulation clock.
+
+    For STAY  : next_location and next_hour were already set by check_plan.
+    For MOVE_AB: parse LLM response via util.parser, validate against candidates.
+    """
+    from util.parser import parse_location_decision
+
+    user_id = state["user_profile"]["user_id"][:8]
+
+    if state.get("action") == "STAY":
+        # Already resolved in check_plan; nothing more to do
+        print(f"  [apply_decision] user {user_id}: STAY at "
+              f"loc {state['next_location']} until h{state['next_hour']:02d}")
+        return {}
+
+    # --- Parse LLM output ---
+    raw        = state.get("llm_response", "")
+    candidates = state.get("candidates", [])
+    decision   = parse_location_decision(raw, candidates)
+
+    next_loc   = decision.get("next_location_id", state["current_location"])
+    reason     = decision.get("reason", "")
+    method     = decision.get("parse_method", "unknown")
+
+    # Validate: if loc_id not in candidates, fall back to top candidate
+    valid_ids = {c["loc_id"] for c in candidates}
+    if next_loc not in valid_ids and candidates:
+        print(f"  [apply_decision] user {user_id}: loc {next_loc} not in candidates "
+              f"— falling back to top candidate")
+        next_loc = candidates[0]["loc_id"]
+        reason   = "corrected to top gravity candidate"
+
+    print(f"  [apply_decision] user {user_id}: MOVE → loc {next_loc}  "
+          f"({method}) reason: {reason}")
+
+    return {
+        "decision":      decision,
+        "next_location": next_loc,
+        "next_hour":     state["current_hour"] + 1,
+    }
+
+
+# ── Conditional router after check_plan ──────────────────────────────────────
+
+def _route_after_check_plan(state: UserInferenceState) -> str:
+    """Route to get_candidates (MOVE) or apply_decision (STAY)."""
+    return "get_candidates" if state.get("action") == "MOVE_AB" else "apply_decision"
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# LANGGRAPH NODE FUNCTIONS
-# Each function receives the full state, returns a partial-update dict.
+# INFERENCE GRAPH BUILDER
 # ═══════════════════════════════════════════════════════════════════════════════
 
-def node_load_priors(state: UserInitState) -> Dict:
+def build_user_inference_graph():
     """
-    Node 1 — Load all pattern files and build lookup structures.
+    Build and compile the per-timestep user inference StateGraph.
 
-    Reads:
-      community_fixed.json, motifs.json, population_flow.json,
-      location.csv, mobility_train.csv, mobility_test.csv
+    Graph structure:
+        check_plan
+            ├─ (MOVE_AB) → get_candidates → llm_decide → apply_decision → END
+            └─ (STAY)    → apply_decision → END
     """
-    print("\n[Node 1] Loading priors ...")
-    cfg  = state["cfg"]
-    city = state["city"]
+    graph = StateGraph(UserInferenceState)
 
-    data_dir  = Path(cfg["paths"]["processed_dir"])
-    graph_dir = data_dir / cfg.get("paths", {}).get("graph_subdir", "dynamic_graph")
-    pat_dir   = graph_dir / "extracted_pattern"
+    graph.add_node("check_plan",     node_check_plan)
+    graph.add_node("get_candidates", node_get_candidates)
+    graph.add_node("llm_decide",     node_llm_decide)
+    graph.add_node("apply_decision", node_apply_decision)
 
-    # ── Community structure ────────────────────────────────────────────
-    with open(pat_dir / "community_fixed.json") as f:
-        cf = json.load(f)
-    region_to_comm = {k: int(v) for k, v in cf["region_to_comm"].items()}
-    comm_to_locs   = {k: [int(x) for x in v]
-                      for k, v in cf["comm_to_locs"].items()}
-    n_comm = cf["n_communities"]
+    graph.set_entry_point("check_plan")
 
-    # ── POI and coordinate lookup ──────────────────────────────────────
-    loc_df = pd.read_csv(data_dir / "location.csv")
-    poi_map, coord_map = build_loc_lookup(loc_df, cfg)
-    # coord_map values are tuples → convert to lists for JSON safety
-    coord_map_serial = {rid: list(lonlat) for rid, lonlat in coord_map.items()}
-
-    # ── Motif statistics ───────────────────────────────────────────────
-    with open(pat_dir / "motifs.json") as f:
-        motifs = json.load(f)
-    global_transition = motifs["transition_matrix"]
-    comm_stay_probs   = _build_comm_stay_probs(motifs["motif_per_community"])
-    comm_move_ratio   = _build_comm_move_ratio(motifs["motif_per_community"])
-
-    # ── Flow / population ──────────────────────────────────────────────
-    with open(pat_dir / "population_flow.json") as f:
-        pop_flow = json.load(f)
-    flow_from      = _build_flow_from(pop_flow)
-    comm_region_pop = _build_comm_region_pop(pop_flow, region_to_comm)
-
-    # ── Train mobility (for community assignment) ──────────────────────
-    mob_train = pd.read_csv(data_dir / "mobility_train.csv")
-    # Start location = location at hour 0 of ANY day, per user
-    hour0_train = (mob_train[mob_train["time"] == 0]
-                   .groupby("user_id")["region_id"]
-                   .first()
-                   .to_dict())
-    train_user_start_loc = {str(uid): int(rid) for uid, rid in hour0_train.items()}
-    # Community assignment from start location
-    train_user_community = {
-        uid: region_to_comm.get(str(rid), 0)
-        for uid, rid in train_user_start_loc.items()
-    }
-
-    # ── Test users (start location only) ──────────────────────────────
-    mob_test  = pd.read_csv(data_dir / "mobility_test.csv")
-    hour0_test = (mob_test[mob_test["time"] == 0]
-                  .sort_values("date")
-                  .groupby("user_id")
-                  .first()
-                  .reset_index()[["user_id", "date", "region_id"]])
-    test_users = [
-        {"user_id": str(row.user_id),
-         "start_location": int(row.region_id),
-         "date": int(row.date)}
-        for row in hour0_test.itertuples()
-    ]
-
-    print(f"  communities  : {n_comm}")
-    print(f"  train users  : {len(train_user_start_loc)}")
-    print(f"  test  users  : {len(test_users)}")
-    print(f"  flow edges   : {sum(len(v) for v in flow_from.values())}")
-
-    return {
-        "region_to_comm":      region_to_comm,
-        "comm_to_locs":        comm_to_locs,
-        "n_communities":       n_comm,
-        "poi_map":             poi_map,
-        "coord_map":           coord_map_serial,
-        "global_transition":   global_transition,
-        "comm_stay_probs":     comm_stay_probs,
-        "comm_move_ratio":     comm_move_ratio,
-        "flow_from":           flow_from,
-        "comm_region_pop":     comm_region_pop,
-        "train_user_start_loc": train_user_start_loc,
-        "train_user_community": train_user_community,
-        "test_users":          test_users,
-    }
-
-
-def node_assign_communities(state: UserInitState) -> Dict:
-    """
-    Node 2 — Assign a community to each test user.
-
-    Method:
-      Build P(community | start_location) from training users:
-        - Count how many train users whose start-location == L are in each community.
-        - Normalize to get a probability distribution.
-      For each test user: sample community from P(comm | start_loc).
-      Fallback: community size prior (larger communities are more probable).
-    """
-    print("\n[Node 2] Assigning communities to test users ...")
-
-    region_to_comm      = state["region_to_comm"]
-    train_user_start    = state["train_user_start_loc"]
-    train_user_comm     = state["train_user_community"]
-    comm_to_locs        = state["comm_to_locs"]
-    n_comm              = state["n_communities"]
-    rng                 = random.Random(state.get("seed", 42))
-
-    # Build P(comm | start_loc) from training data
-    loc_comm_counts: Dict[str, Dict[str, int]] = defaultdict(lambda: defaultdict(int))
-    for uid, rid in train_user_start.items():
-        cid = train_user_comm.get(uid, 0)
-        loc_comm_counts[str(rid)][str(cid)] += 1
-
-    loc_comm_probs: Dict[str, Dict[str, float]] = {}
-    for loc_str, comm_cnt in loc_comm_counts.items():
-        total = sum(comm_cnt.values())
-        loc_comm_probs[loc_str] = {c: n / total for c, n in comm_cnt.items()}
-
-    # Community size prior (fallback)
-    comm_sizes  = {str(cid): len(locs) for cid, locs in comm_to_locs.items()}
-    total_locs  = sum(comm_sizes.values())
-    size_prior  = {cid: sz / total_locs for cid, sz in comm_sizes.items()}
-
-    # Assign community to each test user
-    test_users = state["test_users"]
-    assigned_users: List[Dict] = []
-    comm_dist_counts: Dict[int, int] = defaultdict(int)
-
-    for user in test_users:
-        loc_str = str(user["start_location"])
-        probs   = loc_comm_probs.get(loc_str, size_prior)
-        comms   = [int(c) for c in probs.keys()]
-        weights = list(probs.values())
-        comm    = rng.choices(comms, weights=weights, k=1)[0]
-        assigned_users.append({**user, "assigned_community": comm})
-        comm_dist_counts[comm] += 1
-
-    print(f"  {len(assigned_users)} test users assigned to communities:")
-    for cid in sorted(comm_dist_counts):
-        print(f"    community {cid:2d}: {comm_dist_counts[cid]} users")
-
-    return {
-        "loc_comm_probs": loc_comm_probs,
-        "test_users":     assigned_users,   # enriched with assigned_community
-    }
-
-
-def node_generate_plans(state: UserInitState) -> Dict:
-    """
-    Node 3 — Generate a 24h daily plan for each test user.
-
-    Algorithm:
-      1. Start in STAY state at start_location (hour 0).
-      2. Markov chain: P(next_motif | current_motif) from global_transition,
-         scaled by community's observed MOVE ratio.
-      3. STAY duration: sampled from community's stay duration distribution.
-      4. MOVE destination: sampled from within-community flow weights
-         (falls back to population-weighted random).
-      5. Repeat until 24 hours are covered.
-    """
-    print("\n[Node 3] Generating 24h daily plans ...")
-    rng = random.Random(state.get("seed", 42))
-    test_users = state["test_users"]
-    profiles: List[Dict] = []
-
-    for i, user in enumerate(test_users):
-        uid      = user["user_id"]
-        start    = user["start_location"]
-        comm_id  = user["assigned_community"]
-
-        plan = _generate_single_plan(uid, start, comm_id, state, rng)
-        vec  = _plan_to_vector(plan).tolist()   # 24-dim int list
-
-        # Community POI character (dominant category across community locations)
-        comm_locs = state["comm_to_locs"].get(str(comm_id), [])
-        poi_votes: Dict[str, int] = defaultdict(int)
-        for loc in comm_locs:
-            poi_votes[state["poi_map"].get(loc, "Unknown")] += 1
-        comm_poi = max(poi_votes, key=poi_votes.get) if poi_votes else "Unknown"
-
-        n_moves = int(sum(vec))
-        profiles.append({
-            "user_id":               uid,
-            "city":                  state["city"],
-            "start_location":        start,
-            "start_poi":             state["poi_map"].get(start, "Unknown"),
-            "assigned_community":    comm_id,
-            "community_poi_profile": comm_poi,
-            "plan":                  plan,
-            "plan_vector":           vec,   # 0=STAY, 1=MOVE_AB per hour
-            "n_moves":               n_moves,
-            "co_mobility_users":     [],    # filled by next node
-        })
-
-        if (i + 1) % 20 == 0 or (i + 1) == len(test_users):
-            print(f"  {i+1:>4}/{len(test_users)} users planned")
-
-    return {"user_profiles": profiles}
-
-
-def node_find_co_mobility(state: UserInitState) -> Dict:
-    """
-    Node 4 — Find co-mobility users within the same community.
-
-    For each pair of users in the same community:
-      Compute Jaccard similarity on their 24h MOVE-hour sets.
-      If similarity >= co_mobility_threshold → they are co-mobile.
-
-    Result stored in profile["co_mobility_users"] as a list of
-    {"user_id": ..., "similarity": float} dicts.
-    """
-    print("\n[Node 4] Finding co-mobility users ...")
-    threshold = state.get("co_mobility_threshold", 0.60)
-    profiles  = state["user_profiles"]
-
-    # Group profiles by community
-    comm_groups: Dict[int, List[int]] = defaultdict(list)  # comm → [profile_idx]
-    for idx, p in enumerate(profiles):
-        comm_groups[p["assigned_community"]].append(idx)
-
-    vecs = [np.array(p["plan_vector"], dtype=np.int8) for p in profiles]
-
-    n_pairs_found = 0
-    for comm_id, idxs in comm_groups.items():
-        for i, idx_a in enumerate(idxs):
-            co = []
-            for idx_b in idxs:
-                if idx_b == idx_a:
-                    continue
-                sim = _jaccard_similarity(vecs[idx_a], vecs[idx_b])
-                if sim >= threshold:
-                    co.append({
-                        "user_id":    profiles[idx_b]["user_id"],
-                        "similarity": round(float(sim), 4),
-                    })
-            # Sort by similarity descending
-            co.sort(key=lambda x: -x["similarity"])
-            profiles[idx_a]["co_mobility_users"] = co
-            n_pairs_found += len(co)
-
-    print(f"  Co-mobility threshold : {threshold}")
-    print(f"  Total co-mobility links: {n_pairs_found}")
-    avg = n_pairs_found / len(profiles) if profiles else 0
-    print(f"  Avg co-mobile peers/user: {avg:.1f}")
-
-    return {"user_profiles": profiles}
-
-
-def node_save_output(state: UserInitState) -> Dict:
-    """
-    Node 5 — Persist user profiles to JSON.
-
-    Writes:
-      output/user_init/{city}_user_profiles.json   — all users in one file
-      output/user_init/{city}_summary.json         — aggregate statistics
-    """
-    print("\n[Node 5] Saving output ...")
-    cfg      = state["cfg"]
-    city     = state["city"]
-    profiles = state["user_profiles"]
-
-    proj_dir = Path(__file__).parent.parent
-    out_dir  = proj_dir / "output" / "user_init"
-    out_dir.mkdir(parents=True, exist_ok=True)
-
-    # ── All user profiles ─────────────────────────────────────────────
-    profiles_path = out_dir / f"{city}_user_profiles.json"
-    with open(profiles_path, "w", encoding="utf-8") as f:
-        json.dump(profiles, f, indent=2, ensure_ascii=False)
-
-    # ── Summary statistics ─────────────────────────────────────────────
-    n_total   = len(profiles)
-    comm_dist = defaultdict(int)
-    n_moves_total = 0
-    n_co_total    = 0
-    for p in profiles:
-        comm_dist[p["assigned_community"]] += 1
-        n_moves_total += p["n_moves"]
-        n_co_total    += len(p["co_mobility_users"])
-
-    summary = {
-        "city":              city,
-        "n_test_users":      n_total,
-        "n_communities":     state["n_communities"],
-        "co_mobility_threshold": state.get("co_mobility_threshold", 0.60),
-        "community_distribution": {
-            str(k): v for k, v in sorted(comm_dist.items())
+    # Conditional branch after check_plan
+    graph.add_conditional_edges(
+        "check_plan",
+        _route_after_check_plan,
+        {
+            "get_candidates": "get_candidates",
+            "apply_decision": "apply_decision",
         },
-        "avg_moves_per_user":   round(n_moves_total / n_total, 2) if n_total else 0,
-        "avg_co_mobile_peers":  round(n_co_total / n_total, 2) if n_total else 0,
-    }
+    )
 
-    summary_path = out_dir / f"{city}_summary.json"
-    with open(summary_path, "w", encoding="utf-8") as f:
-        json.dump(summary, f, indent=2, ensure_ascii=False)
+    graph.add_edge("get_candidates", "llm_decide")
+    graph.add_edge("llm_decide",     "apply_decision")
+    graph.add_edge("apply_decision", END)
 
-    print(f"  Profiles saved → {profiles_path}")
-    print(f"  Summary  saved → {summary_path}")
-    print(f"\n  ── Summary ────────────────────────────────────────────")
-    print(f"  Users        : {summary['n_test_users']}")
-    print(f"  Avg moves/day: {summary['avg_moves_per_user']}")
-    print(f"  Avg co-mobile: {summary['avg_co_mobile_peers']:.1f} peers")
-    print(f"  Community distribution: {summary['community_distribution']}")
-
-    return {}
+    return graph.compile()

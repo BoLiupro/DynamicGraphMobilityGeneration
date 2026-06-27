@@ -64,4 +64,23 @@
 2. 主流程控制的代码可以写一个main.py
 3. 生成的user profile等等初始化信息，放到/Users/liubo/Desktop/HNU/Research/KDD2026/code/DynamicGraphMobilityGeneration/output/user_init
 
-# 3.2 方法框架建立——user agent
+# 3.2 方法框架建立——user agent推理
+## 背景
+我现在已经基本完成user agent的初始化了，现在要进一步完善user agent的mobility推理功能。这个推理的逻辑大概是这样的，到了每个时间步，每个user都要依据自己的daily plan来决定是move还是stay，如果move的话就需要结合spatial graivty scores（基于距离和poi的吸引力分数）、daily plan purpose(daily plan当中移动是为了到一个什么样的区域)、当前location的flow out（flow out更大对应的候选location有很多的可能去）。这些因素最终都用一个LLM来实现推理和最终决策。
+## 任务
+1. 我觉得现在的user_agent.py更像是user_init.py，而user_graph.py更像是user_agent.py。改一下文件命名
+2. 改完了之后，继续完善user_agent的流程
+3. 写一个spatial_graivity_search函数在/util/common中，这个函数的输入是distance和purpose，distance就是user如果move行为distance label，poi对应move的poi目标。利用引力模型，依据train数据得到一个合适的参数，计算distance限定范围内的所有location对于user的吸引力，取分最高的k个做为候选。k是一个超参，写到config中以便后续修改。
+4. config当中配置langgraph调用llm的api，key="sk-g1F9WeWL1ovJ6ZuHcLCl5nNQRbPELOYTii2n1pBpT6a8ZIW4",域名接口="https://api.openai-proxy.org"以及模型选择也配置在config
+5. 所有的prompt模板在/Users/liubo/Desktop/HNU/Research/KDD2026/code/DynamicGraphMobilityGeneration/util/prompt.py。写一个prompt模板，给定身份、任务、input（attractive scores, daily plan,候选位置的flow out【可以为0】）、输出格式要求（json，包括决定next location id和reason，长度不要过长）
+6. 写一个解析llm推理结果的函数在/Users/liubo/Desktop/HNU/Research/KDD2026/code/DynamicGraphMobilityGeneration/util/parser.py
+## 限制
++ 抵用python，代码逻辑清晰，注释清晰
++ 框架流程都基于LangchainLangGraph来控制
++ 提供一个暂时的单个user的测试接口，而不是在还没稳定的时候就跑所有user的
++ 关键的配置、参数都要写到config里面来进行控制
++ 过程要有信息打印
+## 输出
+1. user_agent.py代码完善
+2. prompt.py, parser.py
+3. 测试接口代码/Users/liubo/Desktop/HNU/Research/KDD2026/code/DynamicGraphMobilityGeneration/test.py

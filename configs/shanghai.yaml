@@ -87,3 +87,19 @@ poi:
     "酒店住宿": "Hotels & Accommodations"
     "金融机构": "Financial Institutions"
     "餐饮美食": "Dining & Cuisine"
+
+# ── LLM configuration (LangChain / LangGraph) ────────────────
+llm:
+  api_key:     "sk-g1F9WeWL1ovJ6ZuHcLCl5nNQRbPELOYTii2n1pBpT6a8ZIW4"
+  base_url:    "https://api.openai-proxy.org/v1"
+  model:       "gpt-4o-mini"
+  temperature: 0.2
+  max_tokens:  150
+
+# ── Spatial gravity model ─────────────────────────────────────
+gravity:
+  alpha:       1.0    # population attractiveness exponent
+  beta:        2.0    # distance decay exponent (d in km)
+  top_k:       5      # number of candidate locations returned
+  poi_boost:   2.0    # score multiplier when candidate POI matches purpose
+  min_dist_km: 0.1    # minimum distance floor to avoid division by zero
