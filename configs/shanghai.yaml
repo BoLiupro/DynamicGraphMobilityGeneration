@@ -1,0 +1,88 @@
+# ============================================================
+# Shanghai — Pipeline Configuration
+# Mobile signaling data, June 1–15 2014, 20×20 grid
+# ============================================================
+
+city: shanghai
+label: "Shanghai (Mobile Signaling)"
+user_label: "Users"
+
+# ── Raw data paths ───────────────────────────────────────────
+paths:
+  raw_dir: "/Users/liubo/Desktop/HNU/Research/KDD2026/code/raw_data/shanghai"
+  mobility_file: "data_6.1~6.15.xlsx"
+  poi_file: "poi.csv"
+
+# ── Study area & grid ────────────────────────────────────────
+area:
+  lon_min: 121.35
+  lon_max: 121.55
+  lat_min: 31.15
+  lat_max: 31.35
+  grid_rows: 20
+  grid_cols: 20          # 20×20 = 400 regions
+
+# ── Time range ───────────────────────────────────────────────
+time:
+  start_date: "2014-06-01"
+  end_date:   "2014-06-15"
+  train_dates: [601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614]
+  test_dates:  [615]
+
+# ── Train / test split ───────────────────────────────────────
+split:
+  test_ratio: 0.1
+  seed: 42
+
+# ── Dynamic graph construction ───────────────────────────────
+graph:
+  sigma_km:    3.0    # distance decay scale: exp(-d / sigma)
+  alpha_flow:  1.0    # flow bonus: w = exp(-d/σ) × (1 + α × flow_norm)
+  max_dist_km: 10.0   # candidate edge distance cutoff
+  flow_topk:   0.20   # keep top 20% edges by combined weight
+
+# ── Pattern mining ───────────────────────────────────────────
+pattern:
+  leiden_resolution: 0.20   # CPMVertexPartition; higher → finer communities
+  leiden_seed:       42
+  leiden_smooth_alpha: 0.4  # prob. of keeping previous location assignment
+  leiden_n_iter_cold: 20    # iterations for cold-start
+  leiden_n_iter_warm:  5    # iterations per evolving timestep
+  stay_bins:   [0, 1, 3, 12, 24]
+  stay_labels: ["1h", "2-3h", "4-12h", "13-24h"]
+  dist_bins:   [0, 1, 2, 3, 5]   # last bin is open-ended (> 5 km)
+  dist_labels: ["0-1km", "1-2km", "2-3km", "3-5km", ">5km"]
+
+# ── POI categories (English names used as column headers) ────
+poi:
+  categories:
+    - "Transportation Facilities"
+    - "Leisure & Entertainment"
+    - "Companies & Enterprises"
+    - "Healthcare"
+    - "Commercial & Residential"
+    - "Tourist Attractions"
+    - "Automotive"
+    - "Life Services"
+    - "Science & Education & Culture"
+    - "Shopping & Consumer Goods"
+    - "Sports & Fitness"
+    - "Hotels & Accommodations"
+    - "Financial Institutions"
+    - "Dining & Cuisine"
+  # Chinese → English mapping (used only in data_process.py)
+  category_map:
+    "交通设施": "Transportation Facilities"
+    "休闲娱乐": "Leisure & Entertainment"
+    "公司企业": "Companies & Enterprises"
+    "医疗保健": "Healthcare"
+    "商务住宅": "Commercial & Residential"
+    "旅游景点": "Tourist Attractions"
+    "汽车相关": "Automotive"
+    "生活服务": "Life Services"
+    "科教文化": "Science & Education & Culture"
+    "购物消费": "Shopping & Consumer Goods"
+    "运动健身": "Sports & Fitness"
+    "酒店住宿": "Hotels & Accommodations"
+    "金融机构": "Financial Institutions"
+    "餐饮美食": "Dining & Cuisine"
