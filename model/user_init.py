@@ -316,6 +316,8 @@ def node_load_priors(state: UserInitState) -> Dict:
     # ── POI and coordinate lookup ──────────────────────────────────────
     loc_df = pd.read_csv(data_dir / "location.csv")
     poi_map, coord_map = build_loc_lookup(loc_df, cfg)
+    from util.common import build_loc_multi_poi
+    poi_multi_map = build_loc_multi_poi(loc_df, cfg, top_k=3)
     # coord_map values are tuples → convert to lists for JSON safety
     coord_map_serial = {rid: list(lonlat) for rid, lonlat in coord_map.items()}
 
@@ -380,6 +382,7 @@ def node_load_priors(state: UserInitState) -> Dict:
         "comm_to_locs":         comm_to_locs,
         "n_communities":        n_comm,
         "poi_map":              poi_map,
+        "poi_multi_map":        poi_multi_map,
         "coord_map":            coord_map_serial,
         "global_transition":    global_transition,
         "comm_stay_probs":      comm_stay_probs,

@@ -184,6 +184,7 @@ def node_llm_decide(state: UserInferenceState) -> Dict:
 
     prompt = build_move_decision_prompt(
         city              = state["city"],
+        user_label        = cfg.get("user_label", "Users"),
         community_profile = state["user_profile"].get("community_poi_profile", "Unknown"),
         from_poi          = current_poi,
         to_poi            = state["move_purpose"],
@@ -195,7 +196,7 @@ def node_llm_decide(state: UserInferenceState) -> Dict:
     print(f"  [llm_decide] user {user_id}: calling {llm_cfg.get('model', 'gpt-4o-mini')} ...")
     response = llm.invoke(prompt)
     raw      = response.content
-    print(f"  [llm_decide] response: {raw[:120]}")
+    print(f"  [llm_decide] response: {raw}")
 
     return {"llm_response": raw}
 

@@ -84,3 +84,38 @@
 1. user_agent.py代码完善
 2. prompt.py, parser.py
 3. 测试接口代码/Users/liubo/Desktop/HNU/Research/KDD2026/code/DynamicGraphMobilityGeneration/test.py
+
+# 3.3 方法框架建立——location agent推理
+## 背景
+我在搭建我的方法框架，目前已经基本完成了user agent的部分，准备开始弄location agent了。location agent是从“location能够吸引什么样的人来"这个角度出发，结合population的分布、flow in的分布情况、，推理location应该有什么user来。最终也会每个时间步形成一个mobility grapn方案，最终user agent形成的和location agent形成的一起交给refelction agent进行后续处理。现在先开始搭建location agent的流程。
+## 任务
+写location agent的相关代码
+1. 每个location有一个agent,记录该location的poi信息、edge信息、以及各种pattern知识先验。
+2. 每个时间步，首先要确定哪些location agent需要进行推理。因为很多时候只需要和move行为相关的或者周边的location进行推理就可以。通过知识先验中的flow in来确定哪些location这个时刻对于user的吸引是最有影响的或者说哪些flow模式是主要的显著的。总而言之，每个时间步根据flow in来找到top m个最有影响的location进行推理。m是重要参数，要写在configs中。
+3. 被选中的location需要推理哪些user到这个位置来。需要的信息除了locationpoi、当前location的该时刻population和flow in先验（大概会吸引多少比重的user来，通过什么purpose的users，并且分别从哪些location吸引过来），还包括和这个location有边关联的其他location上的所有的user的plan（因为可能有的user个人intent是不移动的，但是站在location的角度移动过来的太少了所以需要移动）、co-mobility users信息（如果有相邻的location上有都要移动的user并且他们是co-mobility user，那么很可能他们是要在同一个location汇合）。
+4. 把这些context输入整理成prompt，交给llm进行推理，最终llm给出一个当前时间步移动到该location的user集合
+5. 当所有被选中的location agent完成了推理之后，对mobility进行整理，确定所有的stay和move，得到location agent角度下的mobility dynamic graph。
+## 约束
++ 抵用python，代码逻辑清晰，注释清晰
++ 框架流程都基于LangchainLangGraph来控制
++ 提供一个暂时的单个user的测试接口，而不是在还没稳定的时候就跑所有user的
++ 关键的配置、参数都要写到config里面来进行控制
++ 过程要有信息打印
+## 输出
+1. location_agent.py
+2. prompt.py和parser.py完善
+3. 测试接口代码/Users/liubo/Desktop/HNU/Research/KDD2026/code/DynamicGraphMobilityGeneration/test.py
+4. 其他的代码（如果需要）
+
+# 3.3.2 Location agent修改
+## 背景和任务
+现在已经完成了初步的location agent的搭建，现在要做一些修改：
+1. 挑选top m 个location不是按照总天数中的edge_flow_mean，而是应该是这个时间步下的flow的数量来选择；
+2. location保留最主要的多个poi来选择相应的user with purpose，而不是仅仅只看location的第一个poi
+3. test测试时得到的打印信息中，[1/1] loc 135 (Sports & Fitness)
+    pop=8.1  flow_in=0.714  neighbors=2  co_groups=0这里，我觉得neighber应说明是上一时间步处于该location的user还是相连的location。
+
+# 3.3.3 Location Agent修改
+## 背景和任务
+现在已经完成了初步的location agent的搭建，但是在最终node_compile_mobility_graph中可能会有一些冲突的问题，现在还要做一些修改：
+1. 如果最后合并graph的时候出现了冲突（例如同一个user可能被多个location吸引），按照下面的方式解决：尽量让co-mobility user汇合、优先满足flow in吸引力更大的一方、相等的情况则随机分配

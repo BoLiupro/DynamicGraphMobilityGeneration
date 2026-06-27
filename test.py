@@ -1,15 +1,19 @@
 #!/usr/bin/env python3
 """
-Single-User Inference Test
-============================
-Tests one timestep of LLM-based mobility decision for a single user.
-Uses the pre-computed user profiles from the initialization phase.
+Inference Test Interface
+==========================
+Tests one timestep of LLM-based mobility decision.
+
+Modes:
+  user     (default) — single user agent inference
+  location           — location agent inference (all active locs, one hour)
 
 Usage:
     cd DynamicGraphMobilityGeneration
-    python3 test.py --city shanghai
-    python3 test.py --city shenzhen --user-idx 5 --hour 17
-    python3 test.py --city shanghai --user-idx 0 --hour auto   # first MOVE hour
+    python3 test.py --city shenzhen
+    python3 test.py --city shenzhen --mode user --user-idx 5 --hour 17
+    python3 test.py --city shanghai --mode location --hour 8
+    python3 test.py --city shenzhen --mode location
 """
 
 import argparse
@@ -22,6 +26,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from util.common import load_config
 from model.user_agent import build_user_inference_graph
 from model.user_init import node_load_priors
+from model.location_agent import build_location_agent_graph
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -71,27 +76,110 @@ def print_plan(plan: list, highlight_hour: int):
 # ─────────────────────────────────────────────────────────────────────────────
 
 def parse_args():
-    p = argparse.ArgumentParser(description="Single-user inference test")
-    p.add_argument("--city",     choices=["shanghai", "shenzhen"], default="shanghai")
+    p = argparse.ArgumentParser(description="Mobility agent inference test")
+    p.add_argument("--city",     choices=["shanghai", "shenzhen"], default="shenzhen")
+    p.add_argument("--mode",     choices=["user", "location"],     default="location",
+                   help="'user' = single-user inference; 'location' = location agent")
     p.add_argument("--user-idx", type=int, default=None,
-                   help="Index into user profiles list (default: first user with moves)")
-    p.add_argument("--hour",     type=int, default=None,
-                   help="Simulate from this hour (default: first MOVE hour of selected user)")
+                   help="[user mode] index into user profiles list")
+    p.add_argument("--hour",     type=int, default="16",
+                   help="Simulation hour (default: auto-detect best hour)")
     return p.parse_args()
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Main
+# Location agent test
 # ─────────────────────────────────────────────────────────────────────────────
 
-def main():
-    args = parse_args()
+def test_location_agent(args, cfg):
+    print("=" * 60)
+    print("Location Agent — Single-Hour Inference Test")
+    print("=" * 60)
 
+    # ── Load profiles ─────────────────────────────────────────────────────────
+    profiles = load_user_profiles(args.city)
+    print(f"\n  city     : {args.city}")
+    print(f"  profiles : {len(profiles)} users")
+
+    # Simplification: all users start at their plan's start_location
+    user_positions = {p["user_id"]: p["start_location"] for p in profiles}
+
+    # ── Load reference priors ─────────────────────────────────────────────────
+    print("\nLoading reference priors ...")
+    priors = node_load_priors({"city": args.city, "cfg": cfg, "seed": 42})
+    print(f"  coord_map : {len(priors['coord_map'])} locations")
+    print(f"  pop_map   : {len(priors['pop_map'])} locations")
+
+    # ── Choose test hour ──────────────────────────────────────────────────────
+    if args.hour is not None:
+        test_hour = args.hour
+    else:
+        # Use hour 8 (morning peak, typically high flow)
+        test_hour = 8
+        print(f"  (no --hour given; defaulting to hour {test_hour:02d}:00)")
+
+    print(f"  test_hour : {test_hour:02d}:00")
+
+    # Limit to 1 active location for a concise test
+    test_cfg = dict(cfg)
+    test_cfg["location_agent"] = dict(cfg.get("location_agent", {}))
+    test_cfg["location_agent"]["top_m"] = 1
+
+    # ── Run location agent graph ──────────────────────────────────────────────
+    app = build_location_agent_graph()
+
+    initial_state = {
+        "city":             args.city,
+        "cfg":              test_cfg,
+        "current_hour":     test_hour,
+        "all_user_profiles": profiles,
+        "user_positions":    user_positions,
+        "poi_map":       priors["poi_map"],
+        "poi_multi_map": priors["poi_multi_map"],
+        "coord_map":     priors["coord_map"],
+        "pop_map":       priors["pop_map"],
+        "flow_from":     priors["flow_from"],
+    }
+
+    print("\nRunning location agent graph ...")
+    print("-" * 60)
+    result = app.invoke(initial_state)
+    print("-" * 60)
+
+    # ── Print result ──────────────────────────────────────────────────────────
+    graph = result.get("mobility_graph", [])
+    n_move = sum(1 for r in graph if r["action"] == "MOVE")
+    n_stay = sum(1 for r in graph if r["action"] == "STAY")
+
+    print(f"\nMobility graph summary:")
+    print(f"  total records : {len(graph)}")
+    print(f"  MOVE          : {n_move}")
+    print(f"  STAY          : {n_stay}")
+
+    moves = [r for r in graph if r["action"] == "MOVE"][:5]
+    if moves:
+        print("\n  Sample MOVE records:")
+        for r in moves:
+            print(f"    {r['user_id'][:12]}  "
+                  f"loc {r['from_loc']} ({r['from_poi'][:20]}) → "
+                  f"loc {r['to_loc']} ({r['to_poi'][:20]})")
+
+    if result.get("error"):
+        print(f"\n  ERROR: {result['error']}")
+
+    print("\n" + "=" * 60)
+    print("TEST COMPLETE")
+    print("=" * 60)
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# User agent test (original)
+# ─────────────────────────────────────────────────────────────────────────────
+
+def test_user_agent(args, cfg):
     print("=" * 60)
     print("User Agent — Single-Step Inference Test")
     print("=" * 60)
-
-    cfg = load_config(args.city)
 
     # ── Select user ───────────────────────────────────────────────────────────
     profiles   = load_user_profiles(args.city)
@@ -168,6 +256,16 @@ def main():
     print("\n" + "=" * 60)
     print("TEST COMPLETE")
     print("=" * 60)
+
+
+def main():
+    args = parse_args()
+    cfg  = load_config(args.city)
+
+    if args.mode == "location":
+        test_location_agent(args, cfg)
+    else:
+        test_user_agent(args, cfg)
 
 
 if __name__ == "__main__":

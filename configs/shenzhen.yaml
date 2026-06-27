@@ -102,3 +102,9 @@ gravity:
   top_k:       5      # number of candidate locations returned
   poi_boost:   2.0    # score multiplier when candidate POI matches purpose
   min_dist_km: 0.1    # minimum distance floor to avoid division by zero
+
+# ── Location agent ────────────────────────────────────────────
+location_agent:
+  top_m:              10   # active locations to reason about per timestep
+  max_flow_sources:    5   # max incoming flow sources shown in prompt context
+  max_neighbor_users: 20   # max nearby users shown per location prompt

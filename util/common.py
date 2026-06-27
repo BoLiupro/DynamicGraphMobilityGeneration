@@ -9,8 +9,9 @@ Exports:
     haversine(lon1,lat1,lon2,lat2)   -- single pair distance (km)
     dist_bin(d_km, cfg)              -- bin distance using config's dist_bins/labels
     stay_bin(h, cfg)                 -- bin hours using config's stay_bins/labels
-    build_loc_lookup(loc_df, cfg)    -- poi_map and coord_map dicts
-    spatial_gravity_search(...)      -- top-k candidates by gravity model
+    build_loc_lookup(loc_df, cfg)       -- poi_map and coord_map dicts
+    build_loc_multi_poi(loc_df, cfg)    -- top-k POI types per location
+    spatial_gravity_search(...)         -- top-k candidates by gravity model
 """
 
 import numpy as np
@@ -164,3 +165,32 @@ def build_loc_lookup(loc_df, cfg: dict) -> tuple:
         else:
             poi_map[rid] = 'Unknown'
     return poi_map, coord_map
+
+
+def build_loc_multi_poi(loc_df, cfg: dict, top_k: int = 3) -> dict:
+    """
+    Build a multi-POI map: region_id → [top-k POI category strings, ranked by count].
+
+    Only includes categories with at least one POI present (count > 0).
+    Falls back to ['Unknown'] when no POI data is available.
+
+    Args:
+        loc_df : location.csv DataFrame with one column per POI category
+        cfg    : city config dict (uses cfg['poi']['categories'])
+        top_k  : maximum number of POI types to retain per location
+
+    Returns:
+        {int(region_id): [poi_str, ...]}  — list length ≤ top_k
+    """
+    poi_multi_map = {}
+    poi_cats = cfg['poi']['categories']
+    cat_cols = [c for c in poi_cats if c in loc_df.columns]
+    for _, row in loc_df.iterrows():
+        rid = int(row['region_id'])
+        if cat_cols:
+            vals = row[cat_cols].sort_values(ascending=False)
+            top_pois = [c for c, v in vals.items() if v > 0][:top_k]
+            poi_multi_map[rid] = top_pois if top_pois else ['Unknown']
+        else:
+            poi_multi_map[rid] = ['Unknown']
+    return poi_multi_map

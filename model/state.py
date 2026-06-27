@@ -1,10 +1,11 @@
 """
 State Definitions
 ==================
-Two TypedDicts for the two pipeline stages:
+Three TypedDicts for the three pipeline stages:
 
-  UserInitState      — initialization pipeline (5 nodes, prior-based)
-  UserInferenceState — per-timestep inference (LLM-based mobility decision)
+  UserInitState       — initialization pipeline (5 nodes, prior-based)
+  UserInferenceState  — per-timestep user-side inference (LLM, one user)
+  LocationAgentState  — per-timestep location-side inference (LLM, all active locs)
 
 All values use plain Python types so state is directly JSON-serializable.
 """
@@ -23,7 +24,8 @@ class UserInitState(TypedDict, total=False):
     region_to_comm: Dict[str, int]     # str(region_id) → community_id
     comm_to_locs:   Dict[str, List[int]]  # str(comm_id) → [region_id,...]
     n_communities:  int
-    poi_map:        Dict[int, str]     # region_id → dominant POI category
+    poi_map:        Dict[int, str]          # region_id → dominant POI category
+    poi_multi_map:  Dict[int, List[str]]    # region_id → top-k POI categories
     coord_map:      Dict[int, List[float]]  # region_id → [lon, lat]
 
     # ── Motif priors (from motifs.json) ──────────────────────────────────
@@ -94,3 +96,45 @@ class UserInferenceState(TypedDict, total=False):
     next_location: int   # decided next location
     next_hour:     int   # hour after this action completes
     error:         Optional[str]
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Location agent state — one timestep, all active locations
+# ─────────────────────────────────────────────────────────────────────────────
+
+class LocationAgentState(TypedDict, total=False):
+    # ── Static context ────────────────────────────────────────────────────
+    city: str
+    cfg:  Dict[str, Any]
+    current_hour: int
+
+    # ── Input: all user profiles + current positions ──────────────────────
+    all_user_profiles: List[Dict[str, Any]]   # from user_init output
+    user_positions:    Dict[str, int]          # user_id → current loc_id
+
+    # ── Reference data (passed in from user_init priors) ─────────────────
+    poi_map:       Dict[int, str]              # loc_id → dominant POI type
+    poi_multi_map: Dict[int, List[str]]        # loc_id → top-k POI types
+    coord_map:     Dict[int, List[float]]      # loc_id → [lon, lat]
+    pop_map:   Dict[int, float]                # loc_id → mean population
+    flow_from: Dict[str, Dict[str, float]]     # str(src) → {str(dst): flow}
+
+    # ── Loaded by node_load_location_priors ──────────────────────────────
+    # Aggregated: str(dst) → {str(src): total_flow_across_24h}
+    flow_to:             Dict[str, Dict[str, float]]
+    # hour → {int(dst_loc_id): total_flow_in at that hour}
+    hourly_flow_in:      Dict[int, Dict[int, float]]
+    # hour → {int(dst_loc_id): {int(src_loc_id): flow}}
+    hourly_flow_sources: Dict[int, Dict[int, Dict[int, float]]]
+    # hour → {int(loc_id): population}
+    hourly_pop:          Dict[int, Dict[int, float]]
+
+    # ── Per-timestep intermediate ─────────────────────────────────────────
+    active_locations:   List[int]              # top-m by flow_in
+    location_contexts:  Dict[int, Dict]        # loc_id → full context dict
+    location_decisions: Dict[int, List[str]]   # loc_id → [user_ids to attract]
+
+    # ── Output ────────────────────────────────────────────────────────────
+    # [{user_id, hour, from_loc, to_loc, action, from_poi, to_poi}]
+    mobility_graph: List[Dict[str, Any]]
+    error:          Optional[str]
