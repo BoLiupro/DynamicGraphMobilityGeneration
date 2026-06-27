@@ -9,9 +9,10 @@ user_label: "Users"
 
 # ── Raw data paths ───────────────────────────────────────────
 paths:
-  raw_dir: "/Users/liubo/Desktop/HNU/Research/KDD2026/code/raw_data/shanghai"
+  raw_dir:       "/Users/liubo/Desktop/HNU/Research/KDD2026/code/raw_data/shanghai"
+  processed_dir: "/Users/liubo/Desktop/HNU/Research/KDD2026/code/DynamicGraphMobilityGeneration/data/shanghai"
   mobility_file: "data_6.1~6.15.xlsx"
-  poi_file: "poi.csv"
+  poi_file:      "poi.csv"
 
 # ── Study area & grid ────────────────────────────────────────
 area:

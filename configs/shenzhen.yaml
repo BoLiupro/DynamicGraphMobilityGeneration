@@ -9,9 +9,10 @@ user_label: "Vehicles"
 
 # ── Raw data paths ───────────────────────────────────────────
 paths:
-  raw_dir: "/Users/liubo/Desktop/HNU/Research/KDD2026/code/raw_data/shenzhen"
+  raw_dir:       "/Users/liubo/Desktop/HNU/Research/KDD2026/code/raw_data/shenzhen"
+  processed_dir: "/Users/liubo/Desktop/HNU/Research/KDD2026/code/DynamicGraphMobilityGeneration/data/shenzhen"
   mobility_file: "shenzhen_202211.csv"
-  poi_file: "poi.csv"
+  poi_file:      "poi.csv"
 
 # ── Study area & grid ────────────────────────────────────────
 area:

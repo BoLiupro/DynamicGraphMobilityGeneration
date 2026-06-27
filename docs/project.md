@@ -51,11 +51,16 @@
 ## 任务
 构建framework的代码，现在先完成user的相关部分
 1. 首先所有的user都从0h开始生成并且每个user有一个start location。这个start location就是从mobility_test里面得到的，我们对test里面的user进行生成，但是我们只是知道他们的start location。
-2. 然后基于知识先验中的motifs transition，为每个user
+2. 在之前的先验知识中，train当中的user应该已经被分配了communites，我需要根据这些user的communites和start location的对应概率关系。基于目标user的start location，为每个需要生成的user分配一个community
+3. 对于每个user，利用其community中的motifs transition关系，生成daily plan
+4. 在同一个community当中，利用daily plan的相似度，设定一个阈值来为每个user寻找co-mobility user，即有伴随或者相同出行节奏关系的其他users
 ## 限制
 + 抵用python，代码逻辑清晰，注释清晰
 + 框架流程都基于LangchainLangGraph来控制
-+ 所有user的plan的时间长度都等于24h，用json格式保留
++ 所有user的plan的时间长度都等于24h
++ 数据结果用json格式保留
 ## 输出
 1. user agent代码都输出在/model文件夹下
 2. 主流程控制的代码可以写一个main.py
+3. 生成的user profile等等初始化信息，放到/Users/liubo/Desktop/HNU/Research/KDD2026/code/DynamicGraphMobilityGeneration/output/user_init
+
