@@ -1,0 +1,22 @@
+{
+  "city": "shanghai",
+  "n_test_users": 127,
+  "n_communities": 12,
+  "co_mobility_threshold": 0.6,
+  "community_distribution": {
+    "0": 12,
+    "1": 4,
+    "2": 4,
+    "3": 45,
+    "4": 2,
+    "5": 3,
+    "6": 2,
+    "7": 20,
+    "8": 12,
+    "9": 6,
+    "10": 13,
+    "11": 4
+  },
+  "avg_moves_per_user": 0.33,
+  "avg_co_mobile_peers": 0.03
+}

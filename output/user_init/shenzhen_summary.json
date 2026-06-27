@@ -1,0 +1,26 @@
+{
+  "city": "shenzhen",
+  "n_test_users": 134,
+  "n_communities": 16,
+  "co_mobility_threshold": 0.6,
+  "community_distribution": {
+    "0": 15,
+    "1": 10,
+    "2": 11,
+    "3": 7,
+    "4": 12,
+    "5": 11,
+    "6": 17,
+    "7": 7,
+    "8": 7,
+    "9": 9,
+    "10": 4,
+    "11": 12,
+    "12": 5,
+    "13": 4,
+    "14": 1,
+    "15": 2
+  },
+  "avg_moves_per_user": 0.67,
+  "avg_co_mobile_peers": 0.04
+}

@@ -1,0 +1,8481 @@
+[
+  {
+    "user_id": "200555397",
+    "city": "shenzhen",
+    "start_location": 170,
+    "start_poi": "Automotive",
+    "assigned_community": 0,
+    "community_poi_profile": "Automotive",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 4,
+        "duration_hours": 4,
+        "motif_type": "STAY",
+        "poi_type": "Automotive"
+      },
+      {
+        "start_hour": 4,
+        "end_hour": 5,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Automotive",
+        "to_poi": "Automotive",
+        "dist_km": 1.03,
+        "dist_label": "1-2km"
+      },
+      {
+        "start_hour": 5,
+        "end_hour": 23,
+        "duration_hours": 18,
+        "motif_type": "STAY",
+        "poi_type": "Automotive"
+      },
+      {
+        "start_hour": 23,
+        "end_hour": 24,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Automotive",
+        "to_poi": "Automotive",
+        "dist_km": 6.36,
+        "dist_label": ">5km"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    "n_moves": 2,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "200666726",
+    "city": "shenzhen",
+    "start_location": 223,
+    "start_poi": "Sports & Fitness",
+    "assigned_community": 0,
+    "community_poi_profile": "Automotive",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 13,
+        "duration_hours": 13,
+        "motif_type": "STAY",
+        "poi_type": "Sports & Fitness"
+      },
+      {
+        "start_hour": 13,
+        "end_hour": 24,
+        "duration_hours": 11,
+        "motif_type": "STAY",
+        "poi_type": "Sports & Fitness"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "200673810",
+    "city": "shenzhen",
+    "start_location": 122,
+    "start_poi": "Leisure & Entertainment",
+    "assigned_community": 8,
+    "community_poi_profile": "Unknown",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 12,
+        "duration_hours": 12,
+        "motif_type": "STAY",
+        "poi_type": "Leisure & Entertainment"
+      },
+      {
+        "start_hour": 12,
+        "end_hour": 20,
+        "duration_hours": 8,
+        "motif_type": "STAY",
+        "poi_type": "Leisure & Entertainment"
+      },
+      {
+        "start_hour": 20,
+        "end_hour": 21,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Leisure & Entertainment",
+        "to_poi": "Healthcare",
+        "dist_km": 1.51,
+        "dist_label": "1-2km"
+      },
+      {
+        "start_hour": 21,
+        "end_hour": 24,
+        "duration_hours": 3,
+        "motif_type": "STAY",
+        "poi_type": "Healthcare"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 1,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "200691389",
+    "city": "shenzhen",
+    "start_location": 255,
+    "start_poi": "Leisure & Entertainment",
+    "assigned_community": 8,
+    "community_poi_profile": "Unknown",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 16,
+        "duration_hours": 16,
+        "motif_type": "STAY",
+        "poi_type": "Leisure & Entertainment"
+      },
+      {
+        "start_hour": 16,
+        "end_hour": 17,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Leisure & Entertainment",
+        "to_poi": "Leisure & Entertainment",
+        "dist_km": 2.22,
+        "dist_label": "2-3km"
+      },
+      {
+        "start_hour": 17,
+        "end_hour": 24,
+        "duration_hours": 7,
+        "motif_type": "STAY",
+        "poi_type": "Leisure & Entertainment"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 1,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "200778533",
+    "city": "shenzhen",
+    "start_location": 103,
+    "start_poi": "Companies & Enterprises",
+    "assigned_community": 11,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 1,
+        "duration_hours": 1,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      },
+      {
+        "start_hour": 1,
+        "end_hour": 2,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Companies & Enterprises",
+        "to_poi": "Tourist Attractions",
+        "dist_km": 5.25,
+        "dist_label": ">5km"
+      },
+      {
+        "start_hour": 2,
+        "end_hour": 3,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Tourist Attractions",
+        "to_poi": "Financial Institutions",
+        "dist_km": 8.51,
+        "dist_label": ">5km"
+      },
+      {
+        "start_hour": 3,
+        "end_hour": 12,
+        "duration_hours": 9,
+        "motif_type": "STAY",
+        "poi_type": "Financial Institutions"
+      },
+      {
+        "start_hour": 12,
+        "end_hour": 16,
+        "duration_hours": 4,
+        "motif_type": "STAY",
+        "poi_type": "Financial Institutions"
+      },
+      {
+        "start_hour": 16,
+        "end_hour": 20,
+        "duration_hours": 4,
+        "motif_type": "STAY",
+        "poi_type": "Financial Institutions"
+      },
+      {
+        "start_hour": 20,
+        "end_hour": 21,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Financial Institutions",
+        "to_poi": "Hotels & Accommodations",
+        "dist_km": 4.54,
+        "dist_label": "3-5km"
+      },
+      {
+        "start_hour": 21,
+        "end_hour": 24,
+        "duration_hours": 3,
+        "motif_type": "STAY",
+        "poi_type": "Hotels & Accommodations"
+      }
+    ],
+    "plan_vector": [
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 3,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "201044169",
+    "city": "shenzhen",
+    "start_location": 340,
+    "start_poi": "Dining & Cuisine",
+    "assigned_community": 6,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 18,
+        "duration_hours": 18,
+        "motif_type": "STAY",
+        "poi_type": "Dining & Cuisine"
+      },
+      {
+        "start_hour": 18,
+        "end_hour": 24,
+        "duration_hours": 6,
+        "motif_type": "STAY",
+        "poi_type": "Dining & Cuisine"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "201049209",
+    "city": "shenzhen",
+    "start_location": 298,
+    "start_poi": "Science & Education & Culture",
+    "assigned_community": 0,
+    "community_poi_profile": "Automotive",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 6,
+        "duration_hours": 6,
+        "motif_type": "STAY",
+        "poi_type": "Science & Education & Culture"
+      },
+      {
+        "start_hour": 6,
+        "end_hour": 22,
+        "duration_hours": 16,
+        "motif_type": "STAY",
+        "poi_type": "Science & Education & Culture"
+      },
+      {
+        "start_hour": 22,
+        "end_hour": 24,
+        "duration_hours": 2,
+        "motif_type": "STAY",
+        "poi_type": "Science & Education & Culture"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "201096504",
+    "city": "shenzhen",
+    "start_location": 157,
+    "start_poi": "Science & Education & Culture",
+    "assigned_community": 9,
+    "community_poi_profile": "Unknown",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 13,
+        "duration_hours": 13,
+        "motif_type": "STAY",
+        "poi_type": "Science & Education & Culture"
+      },
+      {
+        "start_hour": 13,
+        "end_hour": 22,
+        "duration_hours": 9,
+        "motif_type": "STAY",
+        "poi_type": "Science & Education & Culture"
+      },
+      {
+        "start_hour": 22,
+        "end_hour": 24,
+        "duration_hours": 2,
+        "motif_type": "STAY",
+        "poi_type": "Science & Education & Culture"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "201135621",
+    "city": "shenzhen",
+    "start_location": 204,
+    "start_poi": "Leisure & Entertainment",
+    "assigned_community": 2,
+    "community_poi_profile": "Companies & Enterprises",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 20,
+        "duration_hours": 20,
+        "motif_type": "STAY",
+        "poi_type": "Leisure & Entertainment"
+      },
+      {
+        "start_hour": 20,
+        "end_hour": 24,
+        "duration_hours": 4,
+        "motif_type": "STAY",
+        "poi_type": "Leisure & Entertainment"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "201280058",
+    "city": "shenzhen",
+    "start_location": 344,
+    "start_poi": "Companies & Enterprises",
+    "assigned_community": 4,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 15,
+        "duration_hours": 15,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      },
+      {
+        "start_hour": 15,
+        "end_hour": 21,
+        "duration_hours": 6,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      },
+      {
+        "start_hour": 21,
+        "end_hour": 22,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Companies & Enterprises",
+        "to_poi": "Science & Education & Culture",
+        "dist_km": 19.84,
+        "dist_label": ">5km"
+      },
+      {
+        "start_hour": 22,
+        "end_hour": 24,
+        "duration_hours": 2,
+        "motif_type": "STAY",
+        "poi_type": "Science & Education & Culture"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    "n_moves": 1,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "201405099",
+    "city": "shenzhen",
+    "start_location": 86,
+    "start_poi": "Financial Institutions",
+    "assigned_community": 11,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 2,
+        "duration_hours": 2,
+        "motif_type": "STAY",
+        "poi_type": "Financial Institutions"
+      },
+      {
+        "start_hour": 2,
+        "end_hour": 3,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Financial Institutions",
+        "to_poi": "Sports & Fitness",
+        "dist_km": 2.45,
+        "dist_label": "2-3km"
+      },
+      {
+        "start_hour": 3,
+        "end_hour": 22,
+        "duration_hours": 19,
+        "motif_type": "STAY",
+        "poi_type": "Sports & Fitness"
+      },
+      {
+        "start_hour": 22,
+        "end_hour": 24,
+        "duration_hours": 2,
+        "motif_type": "STAY",
+        "poi_type": "Sports & Fitness"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 1,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "201496867",
+    "city": "shenzhen",
+    "start_location": 114,
+    "start_poi": "Financial Institutions",
+    "assigned_community": 12,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 21,
+        "duration_hours": 21,
+        "motif_type": "STAY",
+        "poi_type": "Financial Institutions"
+      },
+      {
+        "start_hour": 21,
+        "end_hour": 22,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Financial Institutions",
+        "to_poi": "Financial Institutions",
+        "dist_km": 1.51,
+        "dist_label": "1-2km"
+      },
+      {
+        "start_hour": 22,
+        "end_hour": 24,
+        "duration_hours": 2,
+        "motif_type": "STAY",
+        "poi_type": "Financial Institutions"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    "n_moves": 1,
+    "co_mobility_users": [
+      {
+        "user_id": "201694468",
+        "similarity": 1.0
+      }
+    ]
+  },
+  {
+    "user_id": "201504258",
+    "city": "shenzhen",
+    "start_location": 400,
+    "start_poi": "Companies & Enterprises",
+    "assigned_community": 7,
+    "community_poi_profile": "Companies & Enterprises",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 9,
+        "duration_hours": 9,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      },
+      {
+        "start_hour": 9,
+        "end_hour": 23,
+        "duration_hours": 14,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      },
+      {
+        "start_hour": 23,
+        "end_hour": 24,
+        "duration_hours": 1,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "201505603",
+    "city": "shenzhen",
+    "start_location": 195,
+    "start_poi": "Automotive",
+    "assigned_community": 1,
+    "community_poi_profile": "Companies & Enterprises",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 1,
+        "duration_hours": 1,
+        "motif_type": "STAY",
+        "poi_type": "Automotive"
+      },
+      {
+        "start_hour": 1,
+        "end_hour": 24,
+        "duration_hours": 23,
+        "motif_type": "STAY",
+        "poi_type": "Automotive"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "201509392",
+    "city": "shenzhen",
+    "start_location": 108,
+    "start_poi": "Sports & Fitness",
+    "assigned_community": 13,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 23,
+        "duration_hours": 23,
+        "motif_type": "STAY",
+        "poi_type": "Sports & Fitness"
+      },
+      {
+        "start_hour": 23,
+        "end_hour": 24,
+        "duration_hours": 1,
+        "motif_type": "STAY",
+        "poi_type": "Sports & Fitness"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "201560186",
+    "city": "shenzhen",
+    "start_location": 157,
+    "start_poi": "Science & Education & Culture",
+    "assigned_community": 9,
+    "community_poi_profile": "Unknown",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 21,
+        "duration_hours": 21,
+        "motif_type": "STAY",
+        "poi_type": "Science & Education & Culture"
+      },
+      {
+        "start_hour": 21,
+        "end_hour": 22,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Science & Education & Culture",
+        "to_poi": "Automotive",
+        "dist_km": 13.76,
+        "dist_label": ">5km"
+      },
+      {
+        "start_hour": 22,
+        "end_hour": 23,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Automotive",
+        "to_poi": "Science & Education & Culture",
+        "dist_km": 1.51,
+        "dist_label": "1-2km"
+      },
+      {
+        "start_hour": 23,
+        "end_hour": 24,
+        "duration_hours": 1,
+        "motif_type": "STAY",
+        "poi_type": "Science & Education & Culture"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0
+    ],
+    "n_moves": 2,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "201694468",
+    "city": "shenzhen",
+    "start_location": 114,
+    "start_poi": "Financial Institutions",
+    "assigned_community": 12,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 3,
+        "duration_hours": 3,
+        "motif_type": "STAY",
+        "poi_type": "Financial Institutions"
+      },
+      {
+        "start_hour": 3,
+        "end_hour": 8,
+        "duration_hours": 5,
+        "motif_type": "STAY",
+        "poi_type": "Financial Institutions"
+      },
+      {
+        "start_hour": 8,
+        "end_hour": 21,
+        "duration_hours": 13,
+        "motif_type": "STAY",
+        "poi_type": "Financial Institutions"
+      },
+      {
+        "start_hour": 21,
+        "end_hour": 22,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Financial Institutions",
+        "to_poi": "Financial Institutions",
+        "dist_km": 1.51,
+        "dist_label": "1-2km"
+      },
+      {
+        "start_hour": 22,
+        "end_hour": 24,
+        "duration_hours": 2,
+        "motif_type": "STAY",
+        "poi_type": "Financial Institutions"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    "n_moves": 1,
+    "co_mobility_users": [
+      {
+        "user_id": "201496867",
+        "similarity": 1.0
+      }
+    ]
+  },
+  {
+    "user_id": "201694655",
+    "city": "shenzhen",
+    "start_location": 130,
+    "start_poi": "Tourist Attractions",
+    "assigned_community": 3,
+    "community_poi_profile": "Companies & Enterprises",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 22,
+        "duration_hours": 22,
+        "motif_type": "STAY",
+        "poi_type": "Tourist Attractions"
+      },
+      {
+        "start_hour": 22,
+        "end_hour": 24,
+        "duration_hours": 2,
+        "motif_type": "STAY",
+        "poi_type": "Tourist Attractions"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "201695034",
+    "city": "shenzhen",
+    "start_location": 86,
+    "start_poi": "Financial Institutions",
+    "assigned_community": 11,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 10,
+        "duration_hours": 10,
+        "motif_type": "STAY",
+        "poi_type": "Financial Institutions"
+      },
+      {
+        "start_hour": 10,
+        "end_hour": 11,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Financial Institutions",
+        "to_poi": "Sports & Fitness",
+        "dist_km": 2.45,
+        "dist_label": "2-3km"
+      },
+      {
+        "start_hour": 11,
+        "end_hour": 12,
+        "duration_hours": 1,
+        "motif_type": "STAY",
+        "poi_type": "Sports & Fitness"
+      },
+      {
+        "start_hour": 12,
+        "end_hour": 24,
+        "duration_hours": 12,
+        "motif_type": "STAY",
+        "poi_type": "Sports & Fitness"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 1,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "201699057",
+    "city": "shenzhen",
+    "start_location": 77,
+    "start_poi": "Science & Education & Culture",
+    "assigned_community": 2,
+    "community_poi_profile": "Companies & Enterprises",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 1,
+        "duration_hours": 1,
+        "motif_type": "STAY",
+        "poi_type": "Science & Education & Culture"
+      },
+      {
+        "start_hour": 1,
+        "end_hour": 24,
+        "duration_hours": 23,
+        "motif_type": "STAY",
+        "poi_type": "Science & Education & Culture"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "201705791",
+    "city": "shenzhen",
+    "start_location": 312,
+    "start_poi": "Healthcare",
+    "assigned_community": 6,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 14,
+        "duration_hours": 14,
+        "motif_type": "STAY",
+        "poi_type": "Healthcare"
+      },
+      {
+        "start_hour": 14,
+        "end_hour": 15,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Healthcare",
+        "to_poi": "Sports & Fitness",
+        "dist_km": 2.22,
+        "dist_label": "2-3km"
+      },
+      {
+        "start_hour": 15,
+        "end_hour": 24,
+        "duration_hours": 9,
+        "motif_type": "STAY",
+        "poi_type": "Sports & Fitness"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 1,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "201721712",
+    "city": "shenzhen",
+    "start_location": 366,
+    "start_poi": "Automotive",
+    "assigned_community": 5,
+    "community_poi_profile": "Companies & Enterprises",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 15,
+        "duration_hours": 15,
+        "motif_type": "STAY",
+        "poi_type": "Automotive"
+      },
+      {
+        "start_hour": 15,
+        "end_hour": 16,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Automotive",
+        "to_poi": "Automotive",
+        "dist_km": 2.33,
+        "dist_label": "2-3km"
+      },
+      {
+        "start_hour": 16,
+        "end_hour": 24,
+        "duration_hours": 8,
+        "motif_type": "STAY",
+        "poi_type": "Automotive"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 1,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "201749356",
+    "city": "shenzhen",
+    "start_location": 198,
+    "start_poi": "Healthcare",
+    "assigned_community": 0,
+    "community_poi_profile": "Automotive",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 7,
+        "duration_hours": 7,
+        "motif_type": "STAY",
+        "poi_type": "Healthcare"
+      },
+      {
+        "start_hour": 7,
+        "end_hour": 16,
+        "duration_hours": 9,
+        "motif_type": "STAY",
+        "poi_type": "Healthcare"
+      },
+      {
+        "start_hour": 16,
+        "end_hour": 24,
+        "duration_hours": 8,
+        "motif_type": "STAY",
+        "poi_type": "Healthcare"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "201769712",
+    "city": "shenzhen",
+    "start_location": 146,
+    "start_poi": "Tourist Attractions",
+    "assigned_community": 4,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 5,
+        "duration_hours": 5,
+        "motif_type": "STAY",
+        "poi_type": "Tourist Attractions"
+      },
+      {
+        "start_hour": 5,
+        "end_hour": 10,
+        "duration_hours": 5,
+        "motif_type": "STAY",
+        "poi_type": "Tourist Attractions"
+      },
+      {
+        "start_hour": 10,
+        "end_hour": 24,
+        "duration_hours": 14,
+        "motif_type": "STAY",
+        "poi_type": "Tourist Attractions"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "201771524",
+    "city": "shenzhen",
+    "start_location": 416,
+    "start_poi": "Companies & Enterprises",
+    "assigned_community": 7,
+    "community_poi_profile": "Companies & Enterprises",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 15,
+        "duration_hours": 15,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      },
+      {
+        "start_hour": 15,
+        "end_hour": 24,
+        "duration_hours": 9,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "201799275",
+    "city": "shenzhen",
+    "start_location": 412,
+    "start_poi": "Leisure & Entertainment",
+    "assigned_community": 1,
+    "community_poi_profile": "Companies & Enterprises",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 21,
+        "duration_hours": 21,
+        "motif_type": "STAY",
+        "poi_type": "Leisure & Entertainment"
+      },
+      {
+        "start_hour": 21,
+        "end_hour": 24,
+        "duration_hours": 3,
+        "motif_type": "STAY",
+        "poi_type": "Leisure & Entertainment"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "201802726",
+    "city": "shenzhen",
+    "start_location": 178,
+    "start_poi": "Companies & Enterprises",
+    "assigned_community": 2,
+    "community_poi_profile": "Companies & Enterprises",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 7,
+        "duration_hours": 7,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      },
+      {
+        "start_hour": 7,
+        "end_hour": 9,
+        "duration_hours": 2,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      },
+      {
+        "start_hour": 9,
+        "end_hour": 10,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Companies & Enterprises",
+        "to_poi": "Commercial & Residential",
+        "dist_km": 3.27,
+        "dist_label": "3-5km"
+      },
+      {
+        "start_hour": 10,
+        "end_hour": 24,
+        "duration_hours": 14,
+        "motif_type": "STAY",
+        "poi_type": "Commercial & Residential"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 1,
+    "co_mobility_users": [
+      {
+        "user_id": "203313778",
+        "similarity": 1.0
+      }
+    ]
+  },
+  {
+    "user_id": "201927407",
+    "city": "shenzhen",
+    "start_location": 347,
+    "start_poi": "Healthcare",
+    "assigned_community": 3,
+    "community_poi_profile": "Companies & Enterprises",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 20,
+        "duration_hours": 20,
+        "motif_type": "STAY",
+        "poi_type": "Healthcare"
+      },
+      {
+        "start_hour": 20,
+        "end_hour": 24,
+        "duration_hours": 4,
+        "motif_type": "STAY",
+        "poi_type": "Healthcare"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "201928540",
+    "city": "shenzhen",
+    "start_location": 75,
+    "start_poi": "Science & Education & Culture",
+    "assigned_community": 4,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 17,
+        "duration_hours": 17,
+        "motif_type": "STAY",
+        "poi_type": "Science & Education & Culture"
+      },
+      {
+        "start_hour": 17,
+        "end_hour": 24,
+        "duration_hours": 7,
+        "motif_type": "STAY",
+        "poi_type": "Science & Education & Culture"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "201933140",
+    "city": "shenzhen",
+    "start_location": 118,
+    "start_poi": "Shopping & Consumer Goods",
+    "assigned_community": 12,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 13,
+        "duration_hours": 13,
+        "motif_type": "STAY",
+        "poi_type": "Shopping & Consumer Goods"
+      },
+      {
+        "start_hour": 13,
+        "end_hour": 14,
+        "duration_hours": 1,
+        "motif_type": "STAY",
+        "poi_type": "Shopping & Consumer Goods"
+      },
+      {
+        "start_hour": 14,
+        "end_hour": 24,
+        "duration_hours": 10,
+        "motif_type": "STAY",
+        "poi_type": "Shopping & Consumer Goods"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "202021806",
+    "city": "shenzhen",
+    "start_location": 135,
+    "start_poi": "Sports & Fitness",
+    "assigned_community": 11,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 14,
+        "duration_hours": 14,
+        "motif_type": "STAY",
+        "poi_type": "Sports & Fitness"
+      },
+      {
+        "start_hour": 14,
+        "end_hour": 15,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Sports & Fitness",
+        "to_poi": "Transportation Facilities",
+        "dist_km": 3.08,
+        "dist_label": "3-5km"
+      },
+      {
+        "start_hour": 15,
+        "end_hour": 20,
+        "duration_hours": 5,
+        "motif_type": "STAY",
+        "poi_type": "Transportation Facilities"
+      },
+      {
+        "start_hour": 20,
+        "end_hour": 24,
+        "duration_hours": 4,
+        "motif_type": "STAY",
+        "poi_type": "Transportation Facilities"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 1,
+    "co_mobility_users": [
+      {
+        "user_id": "203318380",
+        "similarity": 1.0
+      }
+    ]
+  },
+  {
+    "user_id": "202023113",
+    "city": "shenzhen",
+    "start_location": 178,
+    "start_poi": "Companies & Enterprises",
+    "assigned_community": 2,
+    "community_poi_profile": "Companies & Enterprises",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 22,
+        "duration_hours": 22,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      },
+      {
+        "start_hour": 22,
+        "end_hour": 24,
+        "duration_hours": 2,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "202023402",
+    "city": "shenzhen",
+    "start_location": 111,
+    "start_poi": "Tourist Attractions",
+    "assigned_community": 10,
+    "community_poi_profile": "Unknown",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 24,
+        "duration_hours": 24,
+        "motif_type": "STAY",
+        "poi_type": "Tourist Attractions"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "202062671",
+    "city": "shenzhen",
+    "start_location": 391,
+    "start_poi": "Dining & Cuisine",
+    "assigned_community": 13,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 17,
+        "duration_hours": 17,
+        "motif_type": "STAY",
+        "poi_type": "Dining & Cuisine"
+      },
+      {
+        "start_hour": 17,
+        "end_hour": 23,
+        "duration_hours": 6,
+        "motif_type": "STAY",
+        "poi_type": "Dining & Cuisine"
+      },
+      {
+        "start_hour": 23,
+        "end_hour": 24,
+        "duration_hours": 1,
+        "motif_type": "STAY",
+        "poi_type": "Dining & Cuisine"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "202149269",
+    "city": "shenzhen",
+    "start_location": 91,
+    "start_poi": "Hotels & Accommodations",
+    "assigned_community": 9,
+    "community_poi_profile": "Unknown",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 5,
+        "duration_hours": 5,
+        "motif_type": "STAY",
+        "poi_type": "Hotels & Accommodations"
+      },
+      {
+        "start_hour": 5,
+        "end_hour": 13,
+        "duration_hours": 8,
+        "motif_type": "STAY",
+        "poi_type": "Hotels & Accommodations"
+      },
+      {
+        "start_hour": 13,
+        "end_hour": 18,
+        "duration_hours": 5,
+        "motif_type": "STAY",
+        "poi_type": "Hotels & Accommodations"
+      },
+      {
+        "start_hour": 18,
+        "end_hour": 19,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Hotels & Accommodations",
+        "to_poi": "Financial Institutions",
+        "dist_km": 1.11,
+        "dist_label": "1-2km"
+      },
+      {
+        "start_hour": 19,
+        "end_hour": 20,
+        "duration_hours": 1,
+        "motif_type": "STAY",
+        "poi_type": "Financial Institutions"
+      },
+      {
+        "start_hour": 20,
+        "end_hour": 22,
+        "duration_hours": 2,
+        "motif_type": "STAY",
+        "poi_type": "Financial Institutions"
+      },
+      {
+        "start_hour": 22,
+        "end_hour": 24,
+        "duration_hours": 2,
+        "motif_type": "STAY",
+        "poi_type": "Financial Institutions"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 1,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "202167512",
+    "city": "shenzhen",
+    "start_location": 315,
+    "start_poi": "Commercial & Residential",
+    "assigned_community": 7,
+    "community_poi_profile": "Companies & Enterprises",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 2,
+        "duration_hours": 2,
+        "motif_type": "STAY",
+        "poi_type": "Commercial & Residential"
+      },
+      {
+        "start_hour": 2,
+        "end_hour": 3,
+        "duration_hours": 1,
+        "motif_type": "STAY",
+        "poi_type": "Commercial & Residential"
+      },
+      {
+        "start_hour": 3,
+        "end_hour": 12,
+        "duration_hours": 9,
+        "motif_type": "STAY",
+        "poi_type": "Commercial & Residential"
+      },
+      {
+        "start_hour": 12,
+        "end_hour": 20,
+        "duration_hours": 8,
+        "motif_type": "STAY",
+        "poi_type": "Commercial & Residential"
+      },
+      {
+        "start_hour": 20,
+        "end_hour": 24,
+        "duration_hours": 4,
+        "motif_type": "STAY",
+        "poi_type": "Commercial & Residential"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "202255867",
+    "city": "shenzhen",
+    "start_location": 120,
+    "start_poi": "Financial Institutions",
+    "assigned_community": 8,
+    "community_poi_profile": "Unknown",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 19,
+        "duration_hours": 19,
+        "motif_type": "STAY",
+        "poi_type": "Financial Institutions"
+      },
+      {
+        "start_hour": 19,
+        "end_hour": 20,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Financial Institutions",
+        "to_poi": "Leisure & Entertainment",
+        "dist_km": 1.03,
+        "dist_label": "1-2km"
+      },
+      {
+        "start_hour": 20,
+        "end_hour": 24,
+        "duration_hours": 4,
+        "motif_type": "STAY",
+        "poi_type": "Leisure & Entertainment"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 1,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "202323940",
+    "city": "shenzhen",
+    "start_location": 163,
+    "start_poi": "Healthcare",
+    "assigned_community": 6,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 20,
+        "duration_hours": 20,
+        "motif_type": "STAY",
+        "poi_type": "Healthcare"
+      },
+      {
+        "start_hour": 20,
+        "end_hour": 24,
+        "duration_hours": 4,
+        "motif_type": "STAY",
+        "poi_type": "Healthcare"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "202378408",
+    "city": "shenzhen",
+    "start_location": 314,
+    "start_poi": "Science & Education & Culture",
+    "assigned_community": 6,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 24,
+        "duration_hours": 24,
+        "motif_type": "STAY",
+        "poi_type": "Science & Education & Culture"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "202426297",
+    "city": "shenzhen",
+    "start_location": 185,
+    "start_poi": "Tourist Attractions",
+    "assigned_community": 3,
+    "community_poi_profile": "Companies & Enterprises",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 12,
+        "duration_hours": 12,
+        "motif_type": "STAY",
+        "poi_type": "Tourist Attractions"
+      },
+      {
+        "start_hour": 12,
+        "end_hour": 24,
+        "duration_hours": 12,
+        "motif_type": "STAY",
+        "poi_type": "Tourist Attractions"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "202457845",
+    "city": "shenzhen",
+    "start_location": 398,
+    "start_poi": "Life Services",
+    "assigned_community": 6,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 4,
+        "duration_hours": 4,
+        "motif_type": "STAY",
+        "poi_type": "Life Services"
+      },
+      {
+        "start_hour": 4,
+        "end_hour": 6,
+        "duration_hours": 2,
+        "motif_type": "STAY",
+        "poi_type": "Life Services"
+      },
+      {
+        "start_hour": 6,
+        "end_hour": 7,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Life Services",
+        "to_poi": "Hotels & Accommodations",
+        "dist_km": 11.19,
+        "dist_label": ">5km"
+      },
+      {
+        "start_hour": 7,
+        "end_hour": 24,
+        "duration_hours": 17,
+        "motif_type": "STAY",
+        "poi_type": "Hotels & Accommodations"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 1,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "202465173",
+    "city": "shenzhen",
+    "start_location": 149,
+    "start_poi": "Tourist Attractions",
+    "assigned_community": 4,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 3,
+        "duration_hours": 3,
+        "motif_type": "STAY",
+        "poi_type": "Tourist Attractions"
+      },
+      {
+        "start_hour": 3,
+        "end_hour": 4,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Tourist Attractions",
+        "to_poi": "Companies & Enterprises",
+        "dist_km": 20.66,
+        "dist_label": ">5km"
+      },
+      {
+        "start_hour": 4,
+        "end_hour": 5,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Companies & Enterprises",
+        "to_poi": "Leisure & Entertainment",
+        "dist_km": 3.28,
+        "dist_label": "3-5km"
+      },
+      {
+        "start_hour": 5,
+        "end_hour": 11,
+        "duration_hours": 6,
+        "motif_type": "STAY",
+        "poi_type": "Leisure & Entertainment"
+      },
+      {
+        "start_hour": 11,
+        "end_hour": 12,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Leisure & Entertainment",
+        "to_poi": "Companies & Enterprises",
+        "dist_km": 3.28,
+        "dist_label": "3-5km"
+      },
+      {
+        "start_hour": 12,
+        "end_hour": 24,
+        "duration_hours": 12,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 3,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "202521448",
+    "city": "shenzhen",
+    "start_location": 258,
+    "start_poi": "Science & Education & Culture",
+    "assigned_community": 8,
+    "community_poi_profile": "Unknown",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 2,
+        "duration_hours": 2,
+        "motif_type": "STAY",
+        "poi_type": "Science & Education & Culture"
+      },
+      {
+        "start_hour": 2,
+        "end_hour": 4,
+        "duration_hours": 2,
+        "motif_type": "STAY",
+        "poi_type": "Science & Education & Culture"
+      },
+      {
+        "start_hour": 4,
+        "end_hour": 24,
+        "duration_hours": 20,
+        "motif_type": "STAY",
+        "poi_type": "Science & Education & Culture"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "202559415",
+    "city": "shenzhen",
+    "start_location": 361,
+    "start_poi": "Automotive",
+    "assigned_community": 5,
+    "community_poi_profile": "Companies & Enterprises",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 20,
+        "duration_hours": 20,
+        "motif_type": "STAY",
+        "poi_type": "Automotive"
+      },
+      {
+        "start_hour": 20,
+        "end_hour": 22,
+        "duration_hours": 2,
+        "motif_type": "STAY",
+        "poi_type": "Automotive"
+      },
+      {
+        "start_hour": 22,
+        "end_hour": 24,
+        "duration_hours": 2,
+        "motif_type": "STAY",
+        "poi_type": "Automotive"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "202568344",
+    "city": "shenzhen",
+    "start_location": 86,
+    "start_poi": "Financial Institutions",
+    "assigned_community": 11,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 14,
+        "duration_hours": 14,
+        "motif_type": "STAY",
+        "poi_type": "Financial Institutions"
+      },
+      {
+        "start_hour": 14,
+        "end_hour": 15,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Financial Institutions",
+        "to_poi": "Hotels & Accommodations",
+        "dist_km": 2.34,
+        "dist_label": "2-3km"
+      },
+      {
+        "start_hour": 15,
+        "end_hour": 18,
+        "duration_hours": 3,
+        "motif_type": "STAY",
+        "poi_type": "Hotels & Accommodations"
+      },
+      {
+        "start_hour": 18,
+        "end_hour": 19,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Hotels & Accommodations",
+        "to_poi": "Sports & Fitness",
+        "dist_km": 5.41,
+        "dist_label": ">5km"
+      },
+      {
+        "start_hour": 19,
+        "end_hour": 20,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Sports & Fitness",
+        "to_poi": "Hotels & Accommodations",
+        "dist_km": 5.41,
+        "dist_label": ">5km"
+      },
+      {
+        "start_hour": 20,
+        "end_hour": 21,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Hotels & Accommodations",
+        "to_poi": "Sports & Fitness",
+        "dist_km": 5.41,
+        "dist_label": ">5km"
+      },
+      {
+        "start_hour": 21,
+        "end_hour": 24,
+        "duration_hours": 3,
+        "motif_type": "STAY",
+        "poi_type": "Sports & Fitness"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 4,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "202580707",
+    "city": "shenzhen",
+    "start_location": 27,
+    "start_poi": "Healthcare",
+    "assigned_community": 4,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 12,
+        "duration_hours": 12,
+        "motif_type": "STAY",
+        "poi_type": "Healthcare"
+      },
+      {
+        "start_hour": 12,
+        "end_hour": 14,
+        "duration_hours": 2,
+        "motif_type": "STAY",
+        "poi_type": "Healthcare"
+      },
+      {
+        "start_hour": 14,
+        "end_hour": 18,
+        "duration_hours": 4,
+        "motif_type": "STAY",
+        "poi_type": "Healthcare"
+      },
+      {
+        "start_hour": 18,
+        "end_hour": 24,
+        "duration_hours": 6,
+        "motif_type": "STAY",
+        "poi_type": "Healthcare"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "202711428",
+    "city": "shenzhen",
+    "start_location": 89,
+    "start_poi": "Leisure & Entertainment",
+    "assigned_community": 12,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 24,
+        "duration_hours": 24,
+        "motif_type": "STAY",
+        "poi_type": "Leisure & Entertainment"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "202714444",
+    "city": "shenzhen",
+    "start_location": 409,
+    "start_poi": "Automotive",
+    "assigned_community": 1,
+    "community_poi_profile": "Companies & Enterprises",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 7,
+        "duration_hours": 7,
+        "motif_type": "STAY",
+        "poi_type": "Automotive"
+      },
+      {
+        "start_hour": 7,
+        "end_hour": 22,
+        "duration_hours": 15,
+        "motif_type": "STAY",
+        "poi_type": "Automotive"
+      },
+      {
+        "start_hour": 22,
+        "end_hour": 24,
+        "duration_hours": 2,
+        "motif_type": "STAY",
+        "poi_type": "Automotive"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "202714867",
+    "city": "shenzhen",
+    "start_location": 394,
+    "start_poi": "Companies & Enterprises",
+    "assigned_community": 10,
+    "community_poi_profile": "Unknown",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 8,
+        "duration_hours": 8,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      },
+      {
+        "start_hour": 8,
+        "end_hour": 17,
+        "duration_hours": 9,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      },
+      {
+        "start_hour": 17,
+        "end_hour": 24,
+        "duration_hours": 7,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "202723153",
+    "city": "shenzhen",
+    "start_location": 338,
+    "start_poi": "Shopping & Consumer Goods",
+    "assigned_community": 6,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 23,
+        "duration_hours": 23,
+        "motif_type": "STAY",
+        "poi_type": "Shopping & Consumer Goods"
+      },
+      {
+        "start_hour": 23,
+        "end_hour": 24,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Shopping & Consumer Goods",
+        "to_poi": "Science & Education & Culture",
+        "dist_km": 1.03,
+        "dist_label": "1-2km"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    "n_moves": 1,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "202727800",
+    "city": "shenzhen",
+    "start_location": 134,
+    "start_poi": "Tourist Attractions",
+    "assigned_community": 13,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 3,
+        "duration_hours": 3,
+        "motif_type": "STAY",
+        "poi_type": "Tourist Attractions"
+      },
+      {
+        "start_hour": 3,
+        "end_hour": 11,
+        "duration_hours": 8,
+        "motif_type": "STAY",
+        "poi_type": "Tourist Attractions"
+      },
+      {
+        "start_hour": 11,
+        "end_hour": 24,
+        "duration_hours": 13,
+        "motif_type": "STAY",
+        "poi_type": "Tourist Attractions"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "202736468",
+    "city": "shenzhen",
+    "start_location": 63,
+    "start_poi": "Hotels & Accommodations",
+    "assigned_community": 11,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 3,
+        "duration_hours": 3,
+        "motif_type": "STAY",
+        "poi_type": "Hotels & Accommodations"
+      },
+      {
+        "start_hour": 3,
+        "end_hour": 4,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Hotels & Accommodations",
+        "to_poi": "Financial Institutions",
+        "dist_km": 2.34,
+        "dist_label": "2-3km"
+      },
+      {
+        "start_hour": 4,
+        "end_hour": 10,
+        "duration_hours": 6,
+        "motif_type": "STAY",
+        "poi_type": "Financial Institutions"
+      },
+      {
+        "start_hour": 10,
+        "end_hour": 24,
+        "duration_hours": 14,
+        "motif_type": "STAY",
+        "poi_type": "Financial Institutions"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 1,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "202737905",
+    "city": "shenzhen",
+    "start_location": 312,
+    "start_poi": "Healthcare",
+    "assigned_community": 6,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 16,
+        "duration_hours": 16,
+        "motif_type": "STAY",
+        "poi_type": "Healthcare"
+      },
+      {
+        "start_hour": 16,
+        "end_hour": 17,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Healthcare",
+        "to_poi": "Hotels & Accommodations",
+        "dist_km": 1.51,
+        "dist_label": "1-2km"
+      },
+      {
+        "start_hour": 17,
+        "end_hour": 24,
+        "duration_hours": 7,
+        "motif_type": "STAY",
+        "poi_type": "Hotels & Accommodations"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 1,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "202758785",
+    "city": "shenzhen",
+    "start_location": 137,
+    "start_poi": "Tourist Attractions",
+    "assigned_community": 6,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 2,
+        "duration_hours": 2,
+        "motif_type": "STAY",
+        "poi_type": "Tourist Attractions"
+      },
+      {
+        "start_hour": 2,
+        "end_hour": 4,
+        "duration_hours": 2,
+        "motif_type": "STAY",
+        "poi_type": "Tourist Attractions"
+      },
+      {
+        "start_hour": 4,
+        "end_hour": 5,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Tourist Attractions",
+        "to_poi": "Automotive",
+        "dist_km": 1.11,
+        "dist_label": "1-2km"
+      },
+      {
+        "start_hour": 5,
+        "end_hour": 23,
+        "duration_hours": 18,
+        "motif_type": "STAY",
+        "poi_type": "Automotive"
+      },
+      {
+        "start_hour": 23,
+        "end_hour": 24,
+        "duration_hours": 1,
+        "motif_type": "STAY",
+        "poi_type": "Automotive"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 1,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "202759640",
+    "city": "shenzhen",
+    "start_location": 408,
+    "start_poi": "Companies & Enterprises",
+    "assigned_community": 0,
+    "community_poi_profile": "Automotive",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 7,
+        "duration_hours": 7,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      },
+      {
+        "start_hour": 7,
+        "end_hour": 10,
+        "duration_hours": 3,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      },
+      {
+        "start_hour": 10,
+        "end_hour": 23,
+        "duration_hours": 13,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      },
+      {
+        "start_hour": 23,
+        "end_hour": 24,
+        "duration_hours": 1,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "202761192",
+    "city": "shenzhen",
+    "start_location": 143,
+    "start_poi": "Science & Education & Culture",
+    "assigned_community": 9,
+    "community_poi_profile": "Unknown",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 3,
+        "duration_hours": 3,
+        "motif_type": "STAY",
+        "poi_type": "Science & Education & Culture"
+      },
+      {
+        "start_hour": 3,
+        "end_hour": 24,
+        "duration_hours": 21,
+        "motif_type": "STAY",
+        "poi_type": "Science & Education & Culture"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "202773150",
+    "city": "shenzhen",
+    "start_location": 348,
+    "start_poi": "Automotive",
+    "assigned_community": 10,
+    "community_poi_profile": "Unknown",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 12,
+        "duration_hours": 12,
+        "motif_type": "STAY",
+        "poi_type": "Automotive"
+      },
+      {
+        "start_hour": 12,
+        "end_hour": 24,
+        "duration_hours": 12,
+        "motif_type": "STAY",
+        "poi_type": "Automotive"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "202788802",
+    "city": "shenzhen",
+    "start_location": 163,
+    "start_poi": "Healthcare",
+    "assigned_community": 6,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 7,
+        "duration_hours": 7,
+        "motif_type": "STAY",
+        "poi_type": "Healthcare"
+      },
+      {
+        "start_hour": 7,
+        "end_hour": 8,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Healthcare",
+        "to_poi": "Automotive",
+        "dist_km": 1.03,
+        "dist_label": "1-2km"
+      },
+      {
+        "start_hour": 8,
+        "end_hour": 15,
+        "duration_hours": 7,
+        "motif_type": "STAY",
+        "poi_type": "Automotive"
+      },
+      {
+        "start_hour": 15,
+        "end_hour": 24,
+        "duration_hours": 9,
+        "motif_type": "STAY",
+        "poi_type": "Automotive"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 1,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "202802508",
+    "city": "shenzhen",
+    "start_location": 410,
+    "start_poi": "Shopping & Consumer Goods",
+    "assigned_community": 1,
+    "community_poi_profile": "Companies & Enterprises",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 18,
+        "duration_hours": 18,
+        "motif_type": "STAY",
+        "poi_type": "Shopping & Consumer Goods"
+      },
+      {
+        "start_hour": 18,
+        "end_hour": 24,
+        "duration_hours": 6,
+        "motif_type": "STAY",
+        "poi_type": "Shopping & Consumer Goods"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "202803888",
+    "city": "shenzhen",
+    "start_location": 314,
+    "start_poi": "Science & Education & Culture",
+    "assigned_community": 6,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 19,
+        "duration_hours": 19,
+        "motif_type": "STAY",
+        "poi_type": "Science & Education & Culture"
+      },
+      {
+        "start_hour": 19,
+        "end_hour": 20,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Science & Education & Culture",
+        "to_poi": "Healthcare",
+        "dist_km": 3.27,
+        "dist_label": "3-5km"
+      },
+      {
+        "start_hour": 20,
+        "end_hour": 24,
+        "duration_hours": 4,
+        "motif_type": "STAY",
+        "poi_type": "Healthcare"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 1,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "202832964",
+    "city": "shenzhen",
+    "start_location": 102,
+    "start_poi": "Transportation Facilities",
+    "assigned_community": 2,
+    "community_poi_profile": "Companies & Enterprises",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 16,
+        "duration_hours": 16,
+        "motif_type": "STAY",
+        "poi_type": "Transportation Facilities"
+      },
+      {
+        "start_hour": 16,
+        "end_hour": 17,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Transportation Facilities",
+        "to_poi": "Companies & Enterprises",
+        "dist_km": 1.51,
+        "dist_label": "1-2km"
+      },
+      {
+        "start_hour": 17,
+        "end_hour": 21,
+        "duration_hours": 4,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      },
+      {
+        "start_hour": 21,
+        "end_hour": 22,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Companies & Enterprises",
+        "to_poi": "Financial Institutions",
+        "dist_km": 1.51,
+        "dist_label": "1-2km"
+      },
+      {
+        "start_hour": 22,
+        "end_hour": 24,
+        "duration_hours": 2,
+        "motif_type": "STAY",
+        "poi_type": "Financial Institutions"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    "n_moves": 2,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "202851247",
+    "city": "shenzhen",
+    "start_location": 446,
+    "start_poi": "Companies & Enterprises",
+    "assigned_community": 3,
+    "community_poi_profile": "Companies & Enterprises",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 19,
+        "duration_hours": 19,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      },
+      {
+        "start_hour": 19,
+        "end_hour": 20,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Companies & Enterprises",
+        "to_poi": "Companies & Enterprises",
+        "dist_km": 2.05,
+        "dist_label": "2-3km"
+      },
+      {
+        "start_hour": 20,
+        "end_hour": 24,
+        "duration_hours": 4,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 1,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "202872978",
+    "city": "shenzhen",
+    "start_location": 494,
+    "start_poi": "Companies & Enterprises",
+    "assigned_community": 5,
+    "community_poi_profile": "Companies & Enterprises",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 8,
+        "duration_hours": 8,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      },
+      {
+        "start_hour": 8,
+        "end_hour": 23,
+        "duration_hours": 15,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      },
+      {
+        "start_hour": 23,
+        "end_hour": 24,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Companies & Enterprises",
+        "to_poi": "Automotive",
+        "dist_km": 9.91,
+        "dist_label": ">5km"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    "n_moves": 1,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "202893162",
+    "city": "shenzhen",
+    "start_location": 116,
+    "start_poi": "Financial Institutions",
+    "assigned_community": 9,
+    "community_poi_profile": "Unknown",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 20,
+        "duration_hours": 20,
+        "motif_type": "STAY",
+        "poi_type": "Financial Institutions"
+      },
+      {
+        "start_hour": 20,
+        "end_hour": 21,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Financial Institutions",
+        "to_poi": "Hotels & Accommodations",
+        "dist_km": 1.11,
+        "dist_label": "1-2km"
+      },
+      {
+        "start_hour": 21,
+        "end_hour": 23,
+        "duration_hours": 2,
+        "motif_type": "STAY",
+        "poi_type": "Hotels & Accommodations"
+      },
+      {
+        "start_hour": 23,
+        "end_hour": 24,
+        "duration_hours": 1,
+        "motif_type": "STAY",
+        "poi_type": "Hotels & Accommodations"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 1,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "202932950",
+    "city": "shenzhen",
+    "start_location": 312,
+    "start_poi": "Healthcare",
+    "assigned_community": 6,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 17,
+        "duration_hours": 17,
+        "motif_type": "STAY",
+        "poi_type": "Healthcare"
+      },
+      {
+        "start_hour": 17,
+        "end_hour": 24,
+        "duration_hours": 7,
+        "motif_type": "STAY",
+        "poi_type": "Healthcare"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "202949367",
+    "city": "shenzhen",
+    "start_location": 126,
+    "start_poi": "Tourist Attractions",
+    "assigned_community": 4,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 19,
+        "duration_hours": 19,
+        "motif_type": "STAY",
+        "poi_type": "Tourist Attractions"
+      },
+      {
+        "start_hour": 19,
+        "end_hour": 20,
+        "duration_hours": 1,
+        "motif_type": "STAY",
+        "poi_type": "Tourist Attractions"
+      },
+      {
+        "start_hour": 20,
+        "end_hour": 24,
+        "duration_hours": 4,
+        "motif_type": "STAY",
+        "poi_type": "Tourist Attractions"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "202959819",
+    "city": "shenzhen",
+    "start_location": 425,
+    "start_poi": "Leisure & Entertainment",
+    "assigned_community": 0,
+    "community_poi_profile": "Automotive",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 4,
+        "duration_hours": 4,
+        "motif_type": "STAY",
+        "poi_type": "Leisure & Entertainment"
+      },
+      {
+        "start_hour": 4,
+        "end_hour": 5,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Leisure & Entertainment",
+        "to_poi": "Automotive",
+        "dist_km": 1.51,
+        "dist_label": "1-2km"
+      },
+      {
+        "start_hour": 5,
+        "end_hour": 9,
+        "duration_hours": 4,
+        "motif_type": "STAY",
+        "poi_type": "Automotive"
+      },
+      {
+        "start_hour": 9,
+        "end_hour": 10,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Automotive",
+        "to_poi": "Companies & Enterprises",
+        "dist_km": 1.11,
+        "dist_label": "1-2km"
+      },
+      {
+        "start_hour": 10,
+        "end_hour": 23,
+        "duration_hours": 13,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      },
+      {
+        "start_hour": 23,
+        "end_hour": 24,
+        "duration_hours": 1,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 2,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "202973286",
+    "city": "shenzhen",
+    "start_location": 160,
+    "start_poi": "Sports & Fitness",
+    "assigned_community": 11,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 1,
+        "duration_hours": 1,
+        "motif_type": "STAY",
+        "poi_type": "Sports & Fitness"
+      },
+      {
+        "start_hour": 1,
+        "end_hour": 19,
+        "duration_hours": 18,
+        "motif_type": "STAY",
+        "poi_type": "Sports & Fitness"
+      },
+      {
+        "start_hour": 19,
+        "end_hour": 23,
+        "duration_hours": 4,
+        "motif_type": "STAY",
+        "poi_type": "Sports & Fitness"
+      },
+      {
+        "start_hour": 23,
+        "end_hour": 24,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Sports & Fitness",
+        "to_poi": "Hotels & Accommodations",
+        "dist_km": 5.41,
+        "dist_label": ">5km"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    "n_moves": 1,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "202978379",
+    "city": "shenzhen",
+    "start_location": 347,
+    "start_poi": "Healthcare",
+    "assigned_community": 3,
+    "community_poi_profile": "Companies & Enterprises",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 22,
+        "duration_hours": 22,
+        "motif_type": "STAY",
+        "poi_type": "Healthcare"
+      },
+      {
+        "start_hour": 22,
+        "end_hour": 24,
+        "duration_hours": 2,
+        "motif_type": "STAY",
+        "poi_type": "Healthcare"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203009559",
+    "city": "shenzhen",
+    "start_location": 473,
+    "start_poi": "Companies & Enterprises",
+    "assigned_community": 3,
+    "community_poi_profile": "Companies & Enterprises",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 24,
+        "duration_hours": 24,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203013829",
+    "city": "shenzhen",
+    "start_location": 287,
+    "start_poi": "Hotels & Accommodations",
+    "assigned_community": 5,
+    "community_poi_profile": "Companies & Enterprises",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 22,
+        "duration_hours": 22,
+        "motif_type": "STAY",
+        "poi_type": "Hotels & Accommodations"
+      },
+      {
+        "start_hour": 22,
+        "end_hour": 23,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Hotels & Accommodations",
+        "to_poi": "Automotive",
+        "dist_km": 3.03,
+        "dist_label": "3-5km"
+      },
+      {
+        "start_hour": 23,
+        "end_hour": 24,
+        "duration_hours": 1,
+        "motif_type": "STAY",
+        "poi_type": "Automotive"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0
+    ],
+    "n_moves": 1,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203034623",
+    "city": "shenzhen",
+    "start_location": 167,
+    "start_poi": "Tourist Attractions",
+    "assigned_community": 0,
+    "community_poi_profile": "Automotive",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 4,
+        "duration_hours": 4,
+        "motif_type": "STAY",
+        "poi_type": "Tourist Attractions"
+      },
+      {
+        "start_hour": 4,
+        "end_hour": 22,
+        "duration_hours": 18,
+        "motif_type": "STAY",
+        "poi_type": "Tourist Attractions"
+      },
+      {
+        "start_hour": 22,
+        "end_hour": 24,
+        "duration_hours": 2,
+        "motif_type": "STAY",
+        "poi_type": "Tourist Attractions"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203046176",
+    "city": "shenzhen",
+    "start_location": 436,
+    "start_poi": "Companies & Enterprises",
+    "assigned_community": 1,
+    "community_poi_profile": "Companies & Enterprises",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 11,
+        "duration_hours": 11,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      },
+      {
+        "start_hour": 11,
+        "end_hour": 12,
+        "duration_hours": 1,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      },
+      {
+        "start_hour": 12,
+        "end_hour": 24,
+        "duration_hours": 12,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203050471",
+    "city": "shenzhen",
+    "start_location": 484,
+    "start_poi": "Dining & Cuisine",
+    "assigned_community": 1,
+    "community_poi_profile": "Companies & Enterprises",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 12,
+        "duration_hours": 12,
+        "motif_type": "STAY",
+        "poi_type": "Dining & Cuisine"
+      },
+      {
+        "start_hour": 12,
+        "end_hour": 13,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Dining & Cuisine",
+        "to_poi": "Automotive",
+        "dist_km": 4.67,
+        "dist_label": "3-5km"
+      },
+      {
+        "start_hour": 13,
+        "end_hour": 14,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Automotive",
+        "to_poi": "Hotels & Accommodations",
+        "dist_km": 1.03,
+        "dist_label": "1-2km"
+      },
+      {
+        "start_hour": 14,
+        "end_hour": 24,
+        "duration_hours": 10,
+        "motif_type": "STAY",
+        "poi_type": "Hotels & Accommodations"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 2,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203075264",
+    "city": "shenzhen",
+    "start_location": 223,
+    "start_poi": "Sports & Fitness",
+    "assigned_community": 0,
+    "community_poi_profile": "Automotive",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 20,
+        "duration_hours": 20,
+        "motif_type": "STAY",
+        "poi_type": "Sports & Fitness"
+      },
+      {
+        "start_hour": 20,
+        "end_hour": 24,
+        "duration_hours": 4,
+        "motif_type": "STAY",
+        "poi_type": "Sports & Fitness"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203092925",
+    "city": "shenzhen",
+    "start_location": 376,
+    "start_poi": "Companies & Enterprises",
+    "assigned_community": 0,
+    "community_poi_profile": "Automotive",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 20,
+        "duration_hours": 20,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      },
+      {
+        "start_hour": 20,
+        "end_hour": 21,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Companies & Enterprises",
+        "to_poi": "Leisure & Entertainment",
+        "dist_km": 2.45,
+        "dist_label": "2-3km"
+      },
+      {
+        "start_hour": 21,
+        "end_hour": 24,
+        "duration_hours": 3,
+        "motif_type": "STAY",
+        "poi_type": "Leisure & Entertainment"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 1,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203123452",
+    "city": "shenzhen",
+    "start_location": 83,
+    "start_poi": "Tourist Attractions",
+    "assigned_community": 11,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 22,
+        "duration_hours": 22,
+        "motif_type": "STAY",
+        "poi_type": "Tourist Attractions"
+      },
+      {
+        "start_hour": 22,
+        "end_hour": 23,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Tourist Attractions",
+        "to_poi": "Transportation Facilities",
+        "dist_km": 5.6,
+        "dist_label": ">5km"
+      },
+      {
+        "start_hour": 23,
+        "end_hour": 24,
+        "duration_hours": 1,
+        "motif_type": "STAY",
+        "poi_type": "Transportation Facilities"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0
+    ],
+    "n_moves": 1,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203130423",
+    "city": "shenzhen",
+    "start_location": 273,
+    "start_poi": "Tourist Attractions",
+    "assigned_community": 1,
+    "community_poi_profile": "Companies & Enterprises",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 19,
+        "duration_hours": 19,
+        "motif_type": "STAY",
+        "poi_type": "Tourist Attractions"
+      },
+      {
+        "start_hour": 19,
+        "end_hour": 24,
+        "duration_hours": 5,
+        "motif_type": "STAY",
+        "poi_type": "Tourist Attractions"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203149265",
+    "city": "shenzhen",
+    "start_location": 316,
+    "start_poi": "Automotive",
+    "assigned_community": 5,
+    "community_poi_profile": "Companies & Enterprises",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 11,
+        "duration_hours": 11,
+        "motif_type": "STAY",
+        "poi_type": "Automotive"
+      },
+      {
+        "start_hour": 11,
+        "end_hour": 24,
+        "duration_hours": 13,
+        "motif_type": "STAY",
+        "poi_type": "Automotive"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203153045",
+    "city": "shenzhen",
+    "start_location": 487,
+    "start_poi": "Leisure & Entertainment",
+    "assigned_community": 8,
+    "community_poi_profile": "Unknown",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 24,
+        "duration_hours": 24,
+        "motif_type": "STAY",
+        "poi_type": "Leisure & Entertainment"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203176011",
+    "city": "shenzhen",
+    "start_location": 133,
+    "start_poi": "Transportation Facilities",
+    "assigned_community": 5,
+    "community_poi_profile": "Companies & Enterprises",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 23,
+        "duration_hours": 23,
+        "motif_type": "STAY",
+        "poi_type": "Transportation Facilities"
+      },
+      {
+        "start_hour": 23,
+        "end_hour": 24,
+        "duration_hours": 1,
+        "motif_type": "STAY",
+        "poi_type": "Transportation Facilities"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203177578",
+    "city": "shenzhen",
+    "start_location": 197,
+    "start_poi": "Shopping & Consumer Goods",
+    "assigned_community": 0,
+    "community_poi_profile": "Automotive",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 24,
+        "duration_hours": 24,
+        "motif_type": "STAY",
+        "poi_type": "Shopping & Consumer Goods"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203193871",
+    "city": "shenzhen",
+    "start_location": 102,
+    "start_poi": "Transportation Facilities",
+    "assigned_community": 2,
+    "community_poi_profile": "Companies & Enterprises",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 1,
+        "duration_hours": 1,
+        "motif_type": "STAY",
+        "poi_type": "Transportation Facilities"
+      },
+      {
+        "start_hour": 1,
+        "end_hour": 2,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Transportation Facilities",
+        "to_poi": "Healthcare",
+        "dist_km": 1.51,
+        "dist_label": "1-2km"
+      },
+      {
+        "start_hour": 2,
+        "end_hour": 18,
+        "duration_hours": 16,
+        "motif_type": "STAY",
+        "poi_type": "Healthcare"
+      },
+      {
+        "start_hour": 18,
+        "end_hour": 24,
+        "duration_hours": 6,
+        "motif_type": "STAY",
+        "poi_type": "Healthcare"
+      }
+    ],
+    "plan_vector": [
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 1,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203201089",
+    "city": "shenzhen",
+    "start_location": 478,
+    "start_poi": "Companies & Enterprises",
+    "assigned_community": 0,
+    "community_poi_profile": "Automotive",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 16,
+        "duration_hours": 16,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      },
+      {
+        "start_hour": 16,
+        "end_hour": 17,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Companies & Enterprises",
+        "to_poi": "Automotive",
+        "dist_km": 21.88,
+        "dist_label": ">5km"
+      },
+      {
+        "start_hour": 17,
+        "end_hour": 23,
+        "duration_hours": 6,
+        "motif_type": "STAY",
+        "poi_type": "Automotive"
+      },
+      {
+        "start_hour": 23,
+        "end_hour": 24,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Automotive",
+        "to_poi": "Automotive",
+        "dist_km": 2.45,
+        "dist_label": "2-3km"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    "n_moves": 2,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203203096",
+    "city": "shenzhen",
+    "start_location": 100,
+    "start_poi": "Automotive",
+    "assigned_community": 4,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 18,
+        "duration_hours": 18,
+        "motif_type": "STAY",
+        "poi_type": "Automotive"
+      },
+      {
+        "start_hour": 18,
+        "end_hour": 24,
+        "duration_hours": 6,
+        "motif_type": "STAY",
+        "poi_type": "Automotive"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203213958",
+    "city": "shenzhen",
+    "start_location": 122,
+    "start_poi": "Leisure & Entertainment",
+    "assigned_community": 8,
+    "community_poi_profile": "Unknown",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 13,
+        "duration_hours": 13,
+        "motif_type": "STAY",
+        "poi_type": "Leisure & Entertainment"
+      },
+      {
+        "start_hour": 13,
+        "end_hour": 15,
+        "duration_hours": 2,
+        "motif_type": "STAY",
+        "poi_type": "Leisure & Entertainment"
+      },
+      {
+        "start_hour": 15,
+        "end_hour": 17,
+        "duration_hours": 2,
+        "motif_type": "STAY",
+        "poi_type": "Leisure & Entertainment"
+      },
+      {
+        "start_hour": 17,
+        "end_hour": 18,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Leisure & Entertainment",
+        "to_poi": "Sports & Fitness",
+        "dist_km": 7.6,
+        "dist_label": ">5km"
+      },
+      {
+        "start_hour": 18,
+        "end_hour": 22,
+        "duration_hours": 4,
+        "motif_type": "STAY",
+        "poi_type": "Sports & Fitness"
+      },
+      {
+        "start_hour": 22,
+        "end_hour": 23,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Sports & Fitness",
+        "to_poi": "Unknown",
+        "dist_km": 9.32,
+        "dist_label": ">5km"
+      },
+      {
+        "start_hour": 23,
+        "end_hour": 24,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Unknown",
+        "to_poi": "Unknown",
+        "dist_km": 1.11,
+        "dist_label": "1-2km"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1
+    ],
+    "n_moves": 3,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203214087",
+    "city": "shenzhen",
+    "start_location": 271,
+    "start_poi": "Hotels & Accommodations",
+    "assigned_community": 0,
+    "community_poi_profile": "Automotive",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 20,
+        "duration_hours": 20,
+        "motif_type": "STAY",
+        "poi_type": "Hotels & Accommodations"
+      },
+      {
+        "start_hour": 20,
+        "end_hour": 24,
+        "duration_hours": 4,
+        "motif_type": "STAY",
+        "poi_type": "Hotels & Accommodations"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203222667",
+    "city": "shenzhen",
+    "start_location": 2,
+    "start_poi": "Sports & Fitness",
+    "assigned_community": 2,
+    "community_poi_profile": "Companies & Enterprises",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 22,
+        "duration_hours": 22,
+        "motif_type": "STAY",
+        "poi_type": "Sports & Fitness"
+      },
+      {
+        "start_hour": 22,
+        "end_hour": 23,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Sports & Fitness",
+        "to_poi": "Sports & Fitness",
+        "dist_km": 1.03,
+        "dist_label": "1-2km"
+      },
+      {
+        "start_hour": 23,
+        "end_hour": 24,
+        "duration_hours": 1,
+        "motif_type": "STAY",
+        "poi_type": "Sports & Fitness"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0
+    ],
+    "n_moves": 1,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203250336",
+    "city": "shenzhen",
+    "start_location": 387,
+    "start_poi": "Healthcare",
+    "assigned_community": 7,
+    "community_poi_profile": "Companies & Enterprises",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 7,
+        "duration_hours": 7,
+        "motif_type": "STAY",
+        "poi_type": "Healthcare"
+      },
+      {
+        "start_hour": 7,
+        "end_hour": 8,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Healthcare",
+        "to_poi": "Dining & Cuisine",
+        "dist_km": 2.33,
+        "dist_label": "2-3km"
+      },
+      {
+        "start_hour": 8,
+        "end_hour": 9,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Dining & Cuisine",
+        "to_poi": "Automotive",
+        "dist_km": 2.22,
+        "dist_label": "2-3km"
+      },
+      {
+        "start_hour": 9,
+        "end_hour": 24,
+        "duration_hours": 15,
+        "motif_type": "STAY",
+        "poi_type": "Automotive"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 2,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203254768",
+    "city": "shenzhen",
+    "start_location": 287,
+    "start_poi": "Hotels & Accommodations",
+    "assigned_community": 5,
+    "community_poi_profile": "Companies & Enterprises",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 5,
+        "duration_hours": 5,
+        "motif_type": "STAY",
+        "poi_type": "Hotels & Accommodations"
+      },
+      {
+        "start_hour": 5,
+        "end_hour": 6,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Hotels & Accommodations",
+        "to_poi": "Companies & Enterprises",
+        "dist_km": 3.27,
+        "dist_label": "3-5km"
+      },
+      {
+        "start_hour": 6,
+        "end_hour": 12,
+        "duration_hours": 6,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      },
+      {
+        "start_hour": 12,
+        "end_hour": 18,
+        "duration_hours": 6,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      },
+      {
+        "start_hour": 18,
+        "end_hour": 24,
+        "duration_hours": 6,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 1,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203306798",
+    "city": "shenzhen",
+    "start_location": 38,
+    "start_poi": "Tourist Attractions",
+    "assigned_community": 11,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 2,
+        "duration_hours": 2,
+        "motif_type": "STAY",
+        "poi_type": "Tourist Attractions"
+      },
+      {
+        "start_hour": 2,
+        "end_hour": 13,
+        "duration_hours": 11,
+        "motif_type": "STAY",
+        "poi_type": "Tourist Attractions"
+      },
+      {
+        "start_hour": 13,
+        "end_hour": 24,
+        "duration_hours": 11,
+        "motif_type": "STAY",
+        "poi_type": "Tourist Attractions"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203313778",
+    "city": "shenzhen",
+    "start_location": 150,
+    "start_poi": "Financial Institutions",
+    "assigned_community": 2,
+    "community_poi_profile": "Companies & Enterprises",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 7,
+        "duration_hours": 7,
+        "motif_type": "STAY",
+        "poi_type": "Financial Institutions"
+      },
+      {
+        "start_hour": 7,
+        "end_hour": 9,
+        "duration_hours": 2,
+        "motif_type": "STAY",
+        "poi_type": "Financial Institutions"
+      },
+      {
+        "start_hour": 9,
+        "end_hour": 10,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Financial Institutions",
+        "to_poi": "Automotive",
+        "dist_km": 13.62,
+        "dist_label": ">5km"
+      },
+      {
+        "start_hour": 10,
+        "end_hour": 24,
+        "duration_hours": 14,
+        "motif_type": "STAY",
+        "poi_type": "Automotive"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 1,
+    "co_mobility_users": [
+      {
+        "user_id": "201802726",
+        "similarity": 1.0
+      }
+    ]
+  },
+  {
+    "user_id": "203314692",
+    "city": "shenzhen",
+    "start_location": 497,
+    "start_poi": "Shopping & Consumer Goods",
+    "assigned_community": 14,
+    "community_poi_profile": "Companies & Enterprises",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 22,
+        "duration_hours": 22,
+        "motif_type": "STAY",
+        "poi_type": "Shopping & Consumer Goods"
+      },
+      {
+        "start_hour": 22,
+        "end_hour": 23,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Shopping & Consumer Goods",
+        "to_poi": "Leisure & Entertainment",
+        "dist_km": 16.77,
+        "dist_label": ">5km"
+      },
+      {
+        "start_hour": 23,
+        "end_hour": 24,
+        "duration_hours": 1,
+        "motif_type": "STAY",
+        "poi_type": "Leisure & Entertainment"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0
+    ],
+    "n_moves": 1,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203318380",
+    "city": "shenzhen",
+    "start_location": 188,
+    "start_poi": "Sports & Fitness",
+    "assigned_community": 11,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 12,
+        "duration_hours": 12,
+        "motif_type": "STAY",
+        "poi_type": "Sports & Fitness"
+      },
+      {
+        "start_hour": 12,
+        "end_hour": 14,
+        "duration_hours": 2,
+        "motif_type": "STAY",
+        "poi_type": "Sports & Fitness"
+      },
+      {
+        "start_hour": 14,
+        "end_hour": 15,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Sports & Fitness",
+        "to_poi": "Healthcare",
+        "dist_km": 2.34,
+        "dist_label": "2-3km"
+      },
+      {
+        "start_hour": 15,
+        "end_hour": 24,
+        "duration_hours": 9,
+        "motif_type": "STAY",
+        "poi_type": "Healthcare"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 1,
+    "co_mobility_users": [
+      {
+        "user_id": "202021806",
+        "similarity": 1.0
+      }
+    ]
+  },
+  {
+    "user_id": "203322186",
+    "city": "shenzhen",
+    "start_location": 295,
+    "start_poi": "Shopping & Consumer Goods",
+    "assigned_community": 4,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 1,
+        "duration_hours": 1,
+        "motif_type": "STAY",
+        "poi_type": "Shopping & Consumer Goods"
+      },
+      {
+        "start_hour": 1,
+        "end_hour": 2,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Shopping & Consumer Goods",
+        "to_poi": "Companies & Enterprises",
+        "dist_km": 19.79,
+        "dist_label": ">5km"
+      },
+      {
+        "start_hour": 2,
+        "end_hour": 17,
+        "duration_hours": 15,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      },
+      {
+        "start_hour": 17,
+        "end_hour": 23,
+        "duration_hours": 6,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      },
+      {
+        "start_hour": 23,
+        "end_hour": 24,
+        "duration_hours": 1,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      }
+    ],
+    "plan_vector": [
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 1,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203326542",
+    "city": "shenzhen",
+    "start_location": 173,
+    "start_poi": "Tourist Attractions",
+    "assigned_community": 8,
+    "community_poi_profile": "Unknown",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 1,
+        "duration_hours": 1,
+        "motif_type": "STAY",
+        "poi_type": "Tourist Attractions"
+      },
+      {
+        "start_hour": 1,
+        "end_hour": 24,
+        "duration_hours": 23,
+        "motif_type": "STAY",
+        "poi_type": "Tourist Attractions"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203343955",
+    "city": "shenzhen",
+    "start_location": 219,
+    "start_poi": "Sports & Fitness",
+    "assigned_community": 0,
+    "community_poi_profile": "Automotive",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 15,
+        "duration_hours": 15,
+        "motif_type": "STAY",
+        "poi_type": "Sports & Fitness"
+      },
+      {
+        "start_hour": 15,
+        "end_hour": 21,
+        "duration_hours": 6,
+        "motif_type": "STAY",
+        "poi_type": "Sports & Fitness"
+      },
+      {
+        "start_hour": 21,
+        "end_hour": 24,
+        "duration_hours": 3,
+        "motif_type": "STAY",
+        "poi_type": "Sports & Fitness"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203345174",
+    "city": "shenzhen",
+    "start_location": 169,
+    "start_poi": "Automotive",
+    "assigned_community": 0,
+    "community_poi_profile": "Automotive",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 18,
+        "duration_hours": 18,
+        "motif_type": "STAY",
+        "poi_type": "Automotive"
+      },
+      {
+        "start_hour": 18,
+        "end_hour": 24,
+        "duration_hours": 6,
+        "motif_type": "STAY",
+        "poi_type": "Automotive"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203348271",
+    "city": "shenzhen",
+    "start_location": 190,
+    "start_poi": "Financial Institutions",
+    "assigned_community": 9,
+    "community_poi_profile": "Unknown",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 1,
+        "duration_hours": 1,
+        "motif_type": "STAY",
+        "poi_type": "Financial Institutions"
+      },
+      {
+        "start_hour": 1,
+        "end_hour": 20,
+        "duration_hours": 19,
+        "motif_type": "STAY",
+        "poi_type": "Financial Institutions"
+      },
+      {
+        "start_hour": 20,
+        "end_hour": 24,
+        "duration_hours": 4,
+        "motif_type": "STAY",
+        "poi_type": "Financial Institutions"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203350223",
+    "city": "shenzhen",
+    "start_location": 448,
+    "start_poi": "Companies & Enterprises",
+    "assigned_community": 7,
+    "community_poi_profile": "Companies & Enterprises",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 4,
+        "duration_hours": 4,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      },
+      {
+        "start_hour": 4,
+        "end_hour": 12,
+        "duration_hours": 8,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      },
+      {
+        "start_hour": 12,
+        "end_hour": 17,
+        "duration_hours": 5,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      },
+      {
+        "start_hour": 17,
+        "end_hour": 22,
+        "duration_hours": 5,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      },
+      {
+        "start_hour": 22,
+        "end_hour": 23,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Companies & Enterprises",
+        "to_poi": "Companies & Enterprises",
+        "dist_km": 7.27,
+        "dist_label": ">5km"
+      },
+      {
+        "start_hour": 23,
+        "end_hour": 24,
+        "duration_hours": 1,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0
+    ],
+    "n_moves": 1,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203354736",
+    "city": "shenzhen",
+    "start_location": 287,
+    "start_poi": "Hotels & Accommodations",
+    "assigned_community": 5,
+    "community_poi_profile": "Companies & Enterprises",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 1,
+        "duration_hours": 1,
+        "motif_type": "STAY",
+        "poi_type": "Hotels & Accommodations"
+      },
+      {
+        "start_hour": 1,
+        "end_hour": 16,
+        "duration_hours": 15,
+        "motif_type": "STAY",
+        "poi_type": "Hotels & Accommodations"
+      },
+      {
+        "start_hour": 16,
+        "end_hour": 24,
+        "duration_hours": 8,
+        "motif_type": "STAY",
+        "poi_type": "Hotels & Accommodations"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203354803",
+    "city": "shenzhen",
+    "start_location": 288,
+    "start_poi": "Hotels & Accommodations",
+    "assigned_community": 6,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 10,
+        "duration_hours": 10,
+        "motif_type": "STAY",
+        "poi_type": "Hotels & Accommodations"
+      },
+      {
+        "start_hour": 10,
+        "end_hour": 11,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Hotels & Accommodations",
+        "to_poi": "Healthcare",
+        "dist_km": 3.03,
+        "dist_label": "3-5km"
+      },
+      {
+        "start_hour": 11,
+        "end_hour": 21,
+        "duration_hours": 10,
+        "motif_type": "STAY",
+        "poi_type": "Healthcare"
+      },
+      {
+        "start_hour": 21,
+        "end_hour": 24,
+        "duration_hours": 3,
+        "motif_type": "STAY",
+        "poi_type": "Healthcare"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 1,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203356618",
+    "city": "shenzhen",
+    "start_location": 101,
+    "start_poi": "Tourist Attractions",
+    "assigned_community": 11,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 8,
+        "duration_hours": 8,
+        "motif_type": "STAY",
+        "poi_type": "Tourist Attractions"
+      },
+      {
+        "start_hour": 8,
+        "end_hour": 9,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Tourist Attractions",
+        "to_poi": "Hotels & Accommodations",
+        "dist_km": 12.52,
+        "dist_label": ">5km"
+      },
+      {
+        "start_hour": 9,
+        "end_hour": 17,
+        "duration_hours": 8,
+        "motif_type": "STAY",
+        "poi_type": "Hotels & Accommodations"
+      },
+      {
+        "start_hour": 17,
+        "end_hour": 18,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Hotels & Accommodations",
+        "to_poi": "Sports & Fitness",
+        "dist_km": 5.41,
+        "dist_label": ">5km"
+      },
+      {
+        "start_hour": 18,
+        "end_hour": 19,
+        "duration_hours": 1,
+        "motif_type": "STAY",
+        "poi_type": "Sports & Fitness"
+      },
+      {
+        "start_hour": 19,
+        "end_hour": 20,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Sports & Fitness",
+        "to_poi": "Hotels & Accommodations",
+        "dist_km": 5.41,
+        "dist_label": ">5km"
+      },
+      {
+        "start_hour": 20,
+        "end_hour": 24,
+        "duration_hours": 4,
+        "motif_type": "STAY",
+        "poi_type": "Hotels & Accommodations"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 3,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203360209",
+    "city": "shenzhen",
+    "start_location": 333,
+    "start_poi": "Companies & Enterprises",
+    "assigned_community": 3,
+    "community_poi_profile": "Companies & Enterprises",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 18,
+        "duration_hours": 18,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      },
+      {
+        "start_hour": 18,
+        "end_hour": 19,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Companies & Enterprises",
+        "to_poi": "Transportation Facilities",
+        "dist_km": 19.23,
+        "dist_label": ">5km"
+      },
+      {
+        "start_hour": 19,
+        "end_hour": 24,
+        "duration_hours": 5,
+        "motif_type": "STAY",
+        "poi_type": "Transportation Facilities"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 1,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203361384",
+    "city": "shenzhen",
+    "start_location": 323,
+    "start_poi": "Science & Education & Culture",
+    "assigned_community": 10,
+    "community_poi_profile": "Unknown",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 24,
+        "duration_hours": 24,
+        "motif_type": "STAY",
+        "poi_type": "Science & Education & Culture"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203374649",
+    "city": "shenzhen",
+    "start_location": 490,
+    "start_poi": "Sports & Fitness",
+    "assigned_community": 5,
+    "community_poi_profile": "Companies & Enterprises",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 10,
+        "duration_hours": 10,
+        "motif_type": "STAY",
+        "poi_type": "Sports & Fitness"
+      },
+      {
+        "start_hour": 10,
+        "end_hour": 16,
+        "duration_hours": 6,
+        "motif_type": "STAY",
+        "poi_type": "Sports & Fitness"
+      },
+      {
+        "start_hour": 16,
+        "end_hour": 24,
+        "duration_hours": 8,
+        "motif_type": "STAY",
+        "poi_type": "Sports & Fitness"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203382443",
+    "city": "shenzhen",
+    "start_location": 297,
+    "start_poi": "Automotive",
+    "assigned_community": 0,
+    "community_poi_profile": "Automotive",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 1,
+        "duration_hours": 1,
+        "motif_type": "STAY",
+        "poi_type": "Automotive"
+      },
+      {
+        "start_hour": 1,
+        "end_hour": 3,
+        "duration_hours": 2,
+        "motif_type": "STAY",
+        "poi_type": "Automotive"
+      },
+      {
+        "start_hour": 3,
+        "end_hour": 4,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Automotive",
+        "to_poi": "Shopping & Consumer Goods",
+        "dist_km": 1.03,
+        "dist_label": "1-2km"
+      },
+      {
+        "start_hour": 4,
+        "end_hour": 24,
+        "duration_hours": 20,
+        "motif_type": "STAY",
+        "poi_type": "Shopping & Consumer Goods"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 1,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203401947",
+    "city": "shenzhen",
+    "start_location": 102,
+    "start_poi": "Transportation Facilities",
+    "assigned_community": 2,
+    "community_poi_profile": "Companies & Enterprises",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 8,
+        "duration_hours": 8,
+        "motif_type": "STAY",
+        "poi_type": "Transportation Facilities"
+      },
+      {
+        "start_hour": 8,
+        "end_hour": 13,
+        "duration_hours": 5,
+        "motif_type": "STAY",
+        "poi_type": "Transportation Facilities"
+      },
+      {
+        "start_hour": 13,
+        "end_hour": 14,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Transportation Facilities",
+        "to_poi": "Financial Institutions",
+        "dist_km": 2.05,
+        "dist_label": "2-3km"
+      },
+      {
+        "start_hour": 14,
+        "end_hour": 15,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Financial Institutions",
+        "to_poi": "Companies & Enterprises",
+        "dist_km": 1.51,
+        "dist_label": "1-2km"
+      },
+      {
+        "start_hour": 15,
+        "end_hour": 22,
+        "duration_hours": 7,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      },
+      {
+        "start_hour": 22,
+        "end_hour": 23,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Companies & Enterprises",
+        "to_poi": "Transportation Facilities",
+        "dist_km": 1.51,
+        "dist_label": "1-2km"
+      },
+      {
+        "start_hour": 23,
+        "end_hour": 24,
+        "duration_hours": 1,
+        "motif_type": "STAY",
+        "poi_type": "Transportation Facilities"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0
+    ],
+    "n_moves": 3,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203414175",
+    "city": "shenzhen",
+    "start_location": 126,
+    "start_poi": "Tourist Attractions",
+    "assigned_community": 4,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 1,
+        "duration_hours": 1,
+        "motif_type": "STAY",
+        "poi_type": "Tourist Attractions"
+      },
+      {
+        "start_hour": 1,
+        "end_hour": 24,
+        "duration_hours": 23,
+        "motif_type": "STAY",
+        "poi_type": "Tourist Attractions"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203435644",
+    "city": "shenzhen",
+    "start_location": 171,
+    "start_poi": "Tourist Attractions",
+    "assigned_community": 15,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 5,
+        "duration_hours": 5,
+        "motif_type": "STAY",
+        "poi_type": "Tourist Attractions"
+      },
+      {
+        "start_hour": 5,
+        "end_hour": 9,
+        "duration_hours": 4,
+        "motif_type": "STAY",
+        "poi_type": "Tourist Attractions"
+      },
+      {
+        "start_hour": 9,
+        "end_hour": 17,
+        "duration_hours": 8,
+        "motif_type": "STAY",
+        "poi_type": "Tourist Attractions"
+      },
+      {
+        "start_hour": 17,
+        "end_hour": 22,
+        "duration_hours": 5,
+        "motif_type": "STAY",
+        "poi_type": "Tourist Attractions"
+      },
+      {
+        "start_hour": 22,
+        "end_hour": 24,
+        "duration_hours": 2,
+        "motif_type": "STAY",
+        "poi_type": "Tourist Attractions"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203436511",
+    "city": "shenzhen",
+    "start_location": 336,
+    "start_poi": "Healthcare",
+    "assigned_community": 6,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 14,
+        "duration_hours": 14,
+        "motif_type": "STAY",
+        "poi_type": "Healthcare"
+      },
+      {
+        "start_hour": 14,
+        "end_hour": 23,
+        "duration_hours": 9,
+        "motif_type": "STAY",
+        "poi_type": "Healthcare"
+      },
+      {
+        "start_hour": 23,
+        "end_hour": 24,
+        "duration_hours": 1,
+        "motif_type": "STAY",
+        "poi_type": "Healthcare"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203444156",
+    "city": "shenzhen",
+    "start_location": 221,
+    "start_poi": "Automotive",
+    "assigned_community": 15,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 23,
+        "duration_hours": 23,
+        "motif_type": "STAY",
+        "poi_type": "Automotive"
+      },
+      {
+        "start_hour": 23,
+        "end_hour": 24,
+        "duration_hours": 1,
+        "motif_type": "STAY",
+        "poi_type": "Automotive"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203459139",
+    "city": "shenzhen",
+    "start_location": 361,
+    "start_poi": "Automotive",
+    "assigned_community": 5,
+    "community_poi_profile": "Companies & Enterprises",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 1,
+        "duration_hours": 1,
+        "motif_type": "STAY",
+        "poi_type": "Automotive"
+      },
+      {
+        "start_hour": 1,
+        "end_hour": 2,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Automotive",
+        "to_poi": "Dining & Cuisine",
+        "dist_km": 5.25,
+        "dist_label": ">5km"
+      },
+      {
+        "start_hour": 2,
+        "end_hour": 11,
+        "duration_hours": 9,
+        "motif_type": "STAY",
+        "poi_type": "Dining & Cuisine"
+      },
+      {
+        "start_hour": 11,
+        "end_hour": 12,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Dining & Cuisine",
+        "to_poi": "Automotive",
+        "dist_km": 5.25,
+        "dist_label": ">5km"
+      },
+      {
+        "start_hour": 12,
+        "end_hour": 13,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Automotive",
+        "to_poi": "Dining & Cuisine",
+        "dist_km": 5.25,
+        "dist_label": ">5km"
+      },
+      {
+        "start_hour": 13,
+        "end_hour": 24,
+        "duration_hours": 11,
+        "motif_type": "STAY",
+        "poi_type": "Dining & Cuisine"
+      }
+    ],
+    "plan_vector": [
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 3,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203466167",
+    "city": "shenzhen",
+    "start_location": 337,
+    "start_poi": "Science & Education & Culture",
+    "assigned_community": 6,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 1,
+        "duration_hours": 1,
+        "motif_type": "STAY",
+        "poi_type": "Science & Education & Culture"
+      },
+      {
+        "start_hour": 1,
+        "end_hour": 9,
+        "duration_hours": 8,
+        "motif_type": "STAY",
+        "poi_type": "Science & Education & Culture"
+      },
+      {
+        "start_hour": 9,
+        "end_hour": 10,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Science & Education & Culture",
+        "to_poi": "Hotels & Accommodations",
+        "dist_km": 2.45,
+        "dist_label": "2-3km"
+      },
+      {
+        "start_hour": 10,
+        "end_hour": 11,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Hotels & Accommodations",
+        "to_poi": "Hotels & Accommodations",
+        "dist_km": 1.11,
+        "dist_label": "1-2km"
+      },
+      {
+        "start_hour": 11,
+        "end_hour": 15,
+        "duration_hours": 4,
+        "motif_type": "STAY",
+        "poi_type": "Hotels & Accommodations"
+      },
+      {
+        "start_hour": 15,
+        "end_hour": 16,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Hotels & Accommodations",
+        "to_poi": "Sports & Fitness",
+        "dist_km": 2.45,
+        "dist_label": "2-3km"
+      },
+      {
+        "start_hour": 16,
+        "end_hour": 17,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Sports & Fitness",
+        "to_poi": "Companies & Enterprises",
+        "dist_km": 1.03,
+        "dist_label": "1-2km"
+      },
+      {
+        "start_hour": 17,
+        "end_hour": 24,
+        "duration_hours": 7,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 4,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203468247",
+    "city": "shenzhen",
+    "start_location": 63,
+    "start_poi": "Hotels & Accommodations",
+    "assigned_community": 11,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 16,
+        "duration_hours": 16,
+        "motif_type": "STAY",
+        "poi_type": "Hotels & Accommodations"
+      },
+      {
+        "start_hour": 16,
+        "end_hour": 21,
+        "duration_hours": 5,
+        "motif_type": "STAY",
+        "poi_type": "Hotels & Accommodations"
+      },
+      {
+        "start_hour": 21,
+        "end_hour": 24,
+        "duration_hours": 3,
+        "motif_type": "STAY",
+        "poi_type": "Hotels & Accommodations"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203468881",
+    "city": "shenzhen",
+    "start_location": 336,
+    "start_poi": "Healthcare",
+    "assigned_community": 6,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 20,
+        "duration_hours": 20,
+        "motif_type": "STAY",
+        "poi_type": "Healthcare"
+      },
+      {
+        "start_hour": 20,
+        "end_hour": 24,
+        "duration_hours": 4,
+        "motif_type": "STAY",
+        "poi_type": "Healthcare"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203476138",
+    "city": "shenzhen",
+    "start_location": 385,
+    "start_poi": "Automotive",
+    "assigned_community": 4,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 17,
+        "duration_hours": 17,
+        "motif_type": "STAY",
+        "poi_type": "Automotive"
+      },
+      {
+        "start_hour": 17,
+        "end_hour": 22,
+        "duration_hours": 5,
+        "motif_type": "STAY",
+        "poi_type": "Automotive"
+      },
+      {
+        "start_hour": 22,
+        "end_hour": 24,
+        "duration_hours": 2,
+        "motif_type": "STAY",
+        "poi_type": "Automotive"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203495341",
+    "city": "shenzhen",
+    "start_location": 306,
+    "start_poi": "Companies & Enterprises",
+    "assigned_community": 5,
+    "community_poi_profile": "Companies & Enterprises",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 8,
+        "duration_hours": 8,
+        "motif_type": "STAY",
+        "poi_type": "Companies & Enterprises"
+      },
+      {
+        "start_hour": 8,
+        "end_hour": 9,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Companies & Enterprises",
+        "to_poi": "Dining & Cuisine",
+        "dist_km": 10.25,
+        "dist_label": ">5km"
+      },
+      {
+        "start_hour": 9,
+        "end_hour": 10,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Dining & Cuisine",
+        "to_poi": "Financial Institutions",
+        "dist_km": 1.11,
+        "dist_label": "1-2km"
+      },
+      {
+        "start_hour": 10,
+        "end_hour": 19,
+        "duration_hours": 9,
+        "motif_type": "STAY",
+        "poi_type": "Financial Institutions"
+      },
+      {
+        "start_hour": 19,
+        "end_hour": 20,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Financial Institutions",
+        "to_poi": "Dining & Cuisine",
+        "dist_km": 1.11,
+        "dist_label": "1-2km"
+      },
+      {
+        "start_hour": 20,
+        "end_hour": 24,
+        "duration_hours": 4,
+        "motif_type": "STAY",
+        "poi_type": "Dining & Cuisine"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 3,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203503425",
+    "city": "shenzhen",
+    "start_location": 116,
+    "start_poi": "Financial Institutions",
+    "assigned_community": 9,
+    "community_poi_profile": "Unknown",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 1,
+        "duration_hours": 1,
+        "motif_type": "STAY",
+        "poi_type": "Financial Institutions"
+      },
+      {
+        "start_hour": 1,
+        "end_hour": 2,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Financial Institutions",
+        "to_poi": "Hotels & Accommodations",
+        "dist_km": 1.11,
+        "dist_label": "1-2km"
+      },
+      {
+        "start_hour": 2,
+        "end_hour": 15,
+        "duration_hours": 13,
+        "motif_type": "STAY",
+        "poi_type": "Hotels & Accommodations"
+      },
+      {
+        "start_hour": 15,
+        "end_hour": 21,
+        "duration_hours": 6,
+        "motif_type": "STAY",
+        "poi_type": "Hotels & Accommodations"
+      },
+      {
+        "start_hour": 21,
+        "end_hour": 24,
+        "duration_hours": 3,
+        "motif_type": "STAY",
+        "poi_type": "Hotels & Accommodations"
+      }
+    ],
+    "plan_vector": [
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 1,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203512311",
+    "city": "shenzhen",
+    "start_location": 373,
+    "start_poi": "Sports & Fitness",
+    "assigned_community": 4,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 9,
+        "duration_hours": 9,
+        "motif_type": "STAY",
+        "poi_type": "Sports & Fitness"
+      },
+      {
+        "start_hour": 9,
+        "end_hour": 22,
+        "duration_hours": 13,
+        "motif_type": "STAY",
+        "poi_type": "Sports & Fitness"
+      },
+      {
+        "start_hour": 22,
+        "end_hour": 23,
+        "duration_hours": 1,
+        "motif_type": "STAY",
+        "poi_type": "Sports & Fitness"
+      },
+      {
+        "start_hour": 23,
+        "end_hour": 24,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Sports & Fitness",
+        "to_poi": "Dining & Cuisine",
+        "dist_km": 1.03,
+        "dist_label": "1-2km"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    "n_moves": 1,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203520571",
+    "city": "shenzhen",
+    "start_location": 102,
+    "start_poi": "Transportation Facilities",
+    "assigned_community": 2,
+    "community_poi_profile": "Companies & Enterprises",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 20,
+        "duration_hours": 20,
+        "motif_type": "STAY",
+        "poi_type": "Transportation Facilities"
+      },
+      {
+        "start_hour": 20,
+        "end_hour": 21,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Transportation Facilities",
+        "to_poi": "Healthcare",
+        "dist_km": 1.51,
+        "dist_label": "1-2km"
+      },
+      {
+        "start_hour": 21,
+        "end_hour": 24,
+        "duration_hours": 3,
+        "motif_type": "STAY",
+        "poi_type": "Healthcare"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 1,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203525414",
+    "city": "shenzhen",
+    "start_location": 413,
+    "start_poi": "Hotels & Accommodations",
+    "assigned_community": 7,
+    "community_poi_profile": "Companies & Enterprises",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 20,
+        "duration_hours": 20,
+        "motif_type": "STAY",
+        "poi_type": "Hotels & Accommodations"
+      },
+      {
+        "start_hour": 20,
+        "end_hour": 24,
+        "duration_hours": 4,
+        "motif_type": "STAY",
+        "poi_type": "Hotels & Accommodations"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203526316",
+    "city": "shenzhen",
+    "start_location": 342,
+    "start_poi": "Healthcare",
+    "assigned_community": 6,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 9,
+        "duration_hours": 9,
+        "motif_type": "STAY",
+        "poi_type": "Healthcare"
+      },
+      {
+        "start_hour": 9,
+        "end_hour": 10,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Healthcare",
+        "to_poi": "Automotive",
+        "dist_km": 3.03,
+        "dist_label": "3-5km"
+      },
+      {
+        "start_hour": 10,
+        "end_hour": 11,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Automotive",
+        "to_poi": "Healthcare",
+        "dist_km": 3.03,
+        "dist_label": "3-5km"
+      },
+      {
+        "start_hour": 11,
+        "end_hour": 24,
+        "duration_hours": 13,
+        "motif_type": "STAY",
+        "poi_type": "Healthcare"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 2,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203527257",
+    "city": "shenzhen",
+    "start_location": 64,
+    "start_poi": "Hotels & Accommodations",
+    "assigned_community": 9,
+    "community_poi_profile": "Unknown",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 20,
+        "duration_hours": 20,
+        "motif_type": "STAY",
+        "poi_type": "Hotels & Accommodations"
+      },
+      {
+        "start_hour": 20,
+        "end_hour": 23,
+        "duration_hours": 3,
+        "motif_type": "STAY",
+        "poi_type": "Hotels & Accommodations"
+      },
+      {
+        "start_hour": 23,
+        "end_hour": 24,
+        "duration_hours": 1,
+        "motif_type": "STAY",
+        "poi_type": "Hotels & Accommodations"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203530584",
+    "city": "shenzhen",
+    "start_location": 0,
+    "start_poi": "Tourist Attractions",
+    "assigned_community": 4,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 7,
+        "duration_hours": 7,
+        "motif_type": "STAY",
+        "poi_type": "Tourist Attractions"
+      },
+      {
+        "start_hour": 7,
+        "end_hour": 8,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Tourist Attractions",
+        "to_poi": "Healthcare",
+        "dist_km": 2.34,
+        "dist_label": "2-3km"
+      },
+      {
+        "start_hour": 8,
+        "end_hour": 17,
+        "duration_hours": 9,
+        "motif_type": "STAY",
+        "poi_type": "Healthcare"
+      },
+      {
+        "start_hour": 17,
+        "end_hour": 24,
+        "duration_hours": 7,
+        "motif_type": "STAY",
+        "poi_type": "Healthcare"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 1,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203530985",
+    "city": "shenzhen",
+    "start_location": 453,
+    "start_poi": "Healthcare",
+    "assigned_community": 7,
+    "community_poi_profile": "Companies & Enterprises",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 3,
+        "duration_hours": 3,
+        "motif_type": "STAY",
+        "poi_type": "Healthcare"
+      },
+      {
+        "start_hour": 3,
+        "end_hour": 16,
+        "duration_hours": 13,
+        "motif_type": "STAY",
+        "poi_type": "Healthcare"
+      },
+      {
+        "start_hour": 16,
+        "end_hour": 24,
+        "duration_hours": 8,
+        "motif_type": "STAY",
+        "poi_type": "Healthcare"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203538742",
+    "city": "shenzhen",
+    "start_location": 438,
+    "start_poi": "Automotive",
+    "assigned_community": 1,
+    "community_poi_profile": "Companies & Enterprises",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 7,
+        "duration_hours": 7,
+        "motif_type": "STAY",
+        "poi_type": "Automotive"
+      },
+      {
+        "start_hour": 7,
+        "end_hour": 14,
+        "duration_hours": 7,
+        "motif_type": "STAY",
+        "poi_type": "Automotive"
+      },
+      {
+        "start_hour": 14,
+        "end_hour": 19,
+        "duration_hours": 5,
+        "motif_type": "STAY",
+        "poi_type": "Automotive"
+      },
+      {
+        "start_hour": 19,
+        "end_hour": 24,
+        "duration_hours": 5,
+        "motif_type": "STAY",
+        "poi_type": "Automotive"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203538829",
+    "city": "shenzhen",
+    "start_location": 438,
+    "start_poi": "Automotive",
+    "assigned_community": 1,
+    "community_poi_profile": "Companies & Enterprises",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 15,
+        "duration_hours": 15,
+        "motif_type": "STAY",
+        "poi_type": "Automotive"
+      },
+      {
+        "start_hour": 15,
+        "end_hour": 16,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Automotive",
+        "to_poi": "Hotels & Accommodations",
+        "dist_km": 1.03,
+        "dist_label": "1-2km"
+      },
+      {
+        "start_hour": 16,
+        "end_hour": 24,
+        "duration_hours": 8,
+        "motif_type": "STAY",
+        "poi_type": "Hotels & Accommodations"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 1,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203541255",
+    "city": "shenzhen",
+    "start_location": 438,
+    "start_poi": "Automotive",
+    "assigned_community": 1,
+    "community_poi_profile": "Companies & Enterprises",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 18,
+        "duration_hours": 18,
+        "motif_type": "STAY",
+        "poi_type": "Automotive"
+      },
+      {
+        "start_hour": 18,
+        "end_hour": 19,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Automotive",
+        "to_poi": "Leisure & Entertainment",
+        "dist_km": 1.51,
+        "dist_label": "1-2km"
+      },
+      {
+        "start_hour": 19,
+        "end_hour": 24,
+        "duration_hours": 5,
+        "motif_type": "STAY",
+        "poi_type": "Leisure & Entertainment"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 1,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203548155",
+    "city": "shenzhen",
+    "start_location": 92,
+    "start_poi": "Dining & Cuisine",
+    "assigned_community": 12,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 10,
+        "duration_hours": 10,
+        "motif_type": "STAY",
+        "poi_type": "Dining & Cuisine"
+      },
+      {
+        "start_hour": 10,
+        "end_hour": 24,
+        "duration_hours": 14,
+        "motif_type": "STAY",
+        "poi_type": "Dining & Cuisine"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203548457",
+    "city": "shenzhen",
+    "start_location": 157,
+    "start_poi": "Science & Education & Culture",
+    "assigned_community": 9,
+    "community_poi_profile": "Unknown",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 18,
+        "duration_hours": 18,
+        "motif_type": "STAY",
+        "poi_type": "Science & Education & Culture"
+      },
+      {
+        "start_hour": 18,
+        "end_hour": 24,
+        "duration_hours": 6,
+        "motif_type": "STAY",
+        "poi_type": "Science & Education & Culture"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203553848",
+    "city": "shenzhen",
+    "start_location": 155,
+    "start_poi": "Automotive",
+    "assigned_community": 13,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 22,
+        "duration_hours": 22,
+        "motif_type": "STAY",
+        "poi_type": "Automotive"
+      },
+      {
+        "start_hour": 22,
+        "end_hour": 24,
+        "duration_hours": 2,
+        "motif_type": "STAY",
+        "poi_type": "Automotive"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203555430",
+    "city": "shenzhen",
+    "start_location": 225,
+    "start_poi": "Commercial & Residential",
+    "assigned_community": 2,
+    "community_poi_profile": "Companies & Enterprises",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 2,
+        "duration_hours": 2,
+        "motif_type": "STAY",
+        "poi_type": "Commercial & Residential"
+      },
+      {
+        "start_hour": 2,
+        "end_hour": 5,
+        "duration_hours": 3,
+        "motif_type": "STAY",
+        "poi_type": "Commercial & Residential"
+      },
+      {
+        "start_hour": 5,
+        "end_hour": 23,
+        "duration_hours": 18,
+        "motif_type": "STAY",
+        "poi_type": "Commercial & Residential"
+      },
+      {
+        "start_hour": 23,
+        "end_hour": 24,
+        "duration_hours": 1,
+        "motif_type": "MOVE_AB",
+        "from_poi": "Commercial & Residential",
+        "to_poi": "Automotive",
+        "dist_km": 11.39,
+        "dist_label": ">5km"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    "n_moves": 1,
+    "co_mobility_users": []
+  },
+  {
+    "user_id": "203557084",
+    "city": "shenzhen",
+    "start_location": 162,
+    "start_poi": "Automotive",
+    "assigned_community": 6,
+    "community_poi_profile": "Tourist Attractions",
+    "plan": [
+      {
+        "start_hour": 0,
+        "end_hour": 22,
+        "duration_hours": 22,
+        "motif_type": "STAY",
+        "poi_type": "Automotive"
+      },
+      {
+        "start_hour": 22,
+        "end_hour": 24,
+        "duration_hours": 2,
+        "motif_type": "STAY",
+        "poi_type": "Automotive"
+      }
+    ],
+    "plan_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_moves": 0,
+    "co_mobility_users": []
+  }
+]

@@ -64,3 +64,4 @@
 2. 主流程控制的代码可以写一个main.py
 3. 生成的user profile等等初始化信息，放到/Users/liubo/Desktop/HNU/Research/KDD2026/code/DynamicGraphMobilityGeneration/output/user_init
 
+# 3.2 方法框架建立——user agent
