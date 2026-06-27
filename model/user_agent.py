@@ -34,14 +34,11 @@ from model.user_init import (
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# INITIALIZATION GRAPH  (unchanged logic from original user_graph.py)
+# INITIALIZATION GRAPH
 # ═══════════════════════════════════════════════════════════════════════════════
 
 def build_user_init_graph():
-    """
-    Build and compile the user initialization StateGraph.
-    Runs five sequential nodes to produce 24h plan profiles for all test users.
-    """
+    """Build and compile the user initialization StateGraph (5 sequential nodes)."""
     graph = StateGraph(UserInitState)
 
     graph.add_node("load_priors",        node_load_priors)
@@ -108,8 +105,6 @@ def node_check_plan(state: UserInferenceState) -> Dict:
         print(f"  (stay until h{segment['end_hour']:02d}, poi={segment['poi_type']})")
         result["next_location"] = state["current_location"]
         result["next_hour"]     = segment["end_hour"]
-        result["move_purpose"]  = ""
-        result["move_dist"]     = ""
     else:  # MOVE_AB
         purpose = segment.get("to_poi", "Unknown")
         dist    = segment.get("dist_label", "1-2km")

@@ -82,8 +82,8 @@ def parse_args():
                    help="'user' = single-user inference; 'location' = location agent")
     p.add_argument("--user-idx", type=int, default=None,
                    help="[user mode] index into user profiles list")
-    p.add_argument("--hour",     type=int, default="16",
-                   help="Simulation hour (default: auto-detect best hour)")
+    p.add_argument("--hour",     type=int, default=16,
+                   help="Simulation hour 0-23 (default: 16)")
     return p.parse_args()
 
 
@@ -110,14 +110,7 @@ def test_location_agent(args, cfg):
     print(f"  coord_map : {len(priors['coord_map'])} locations")
     print(f"  pop_map   : {len(priors['pop_map'])} locations")
 
-    # ── Choose test hour ──────────────────────────────────────────────────────
-    if args.hour is not None:
-        test_hour = args.hour
-    else:
-        # Use hour 8 (morning peak, typically high flow)
-        test_hour = 8
-        print(f"  (no --hour given; defaulting to hour {test_hour:02d}:00)")
-
+    test_hour = args.hour
     print(f"  test_hour : {test_hour:02d}:00")
 
     # Limit to 1 active location for a concise test

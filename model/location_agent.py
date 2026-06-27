@@ -9,7 +9,7 @@ produces an independent mobility graph. Both are later reconciled by the
 reflection agent.
 
 Pipeline:
-  load_priors → select_active → process_locations → compile_graph → END
+  load_priors → select_active → process_locations → compile_mobility_graph → END
 """
 
 import json
@@ -28,20 +28,6 @@ from model.state import LocationAgentState
 # ═══════════════════════════════════════════════════════════════════════════════
 # INTERNAL HELPERS  (no LLM, pure data transformations)
 # ═══════════════════════════════════════════════════════════════════════════════
-
-def _build_flow_to(pop_flow: List[Dict]) -> Dict[str, Dict[str, float]]:
-    """
-    Build aggregated flow_to by inverting edge_flow_mean across all 24 hours.
-
-    Returns: {str(dst_loc_id): {str(src_loc_id): total_flow}}
-    """
-    agg: Dict[str, Dict[str, float]] = defaultdict(lambda: defaultdict(float))
-    for slot in pop_flow:
-        for edge_key, flow in slot["edge_flow_mean"].items():
-            src, dst = edge_key.split(",")
-            agg[dst][src] += flow
-    return {k: dict(v) for k, v in agg.items()}
-
 
 def _build_hourly_flow_in(
     pop_flow: List[Dict],
@@ -213,7 +199,7 @@ def _build_location_context(
         "expected_pop":       round(expected_pop, 2),
         "sim_flow_in":        sim_flow_in,
         "hist_flow_in":       round(hist_flow_in, 3),
-        "total_flow_in":      hist_flow_in,   # kept for backward compat (conflict resolution)
+        "total_flow_in":      hist_flow_in,
         "flow_in_sources":    flow_in_sources,
         "neighbor_users":     users_at_sources,
         "co_mobility_groups": co_groups,
@@ -242,7 +228,6 @@ def node_load_location_priors(state: LocationAgentState) -> Dict:
     with open(pat_dir / "population_flow.json") as f:
         pop_flow = json.load(f)
 
-    flow_to                        = _build_flow_to(pop_flow)
     hourly_flow_in, hourly_sources = _build_hourly_flow_in(pop_flow)
 
     # hourly_pop: hour → {int(loc_id): population}
@@ -253,11 +238,9 @@ def node_load_location_priors(state: LocationAgentState) -> Dict:
 
     active_hours = sum(1 for h in hourly_flow_in if hourly_flow_in[h])
     print(f"  Hours with flow : {active_hours} / {len(hourly_flow_in)}")
-    print(f"  flow_to entries : {len(flow_to)}")
     print(f"  Hourly pop locs : {len(hourly_pop.get(8, {}))}")
 
     return {
-        "flow_to":             flow_to,
         "hourly_flow_in":      hourly_flow_in,
         "hourly_flow_sources": hourly_sources,
         "hourly_pop":          hourly_pop,

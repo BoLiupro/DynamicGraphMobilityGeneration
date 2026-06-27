@@ -120,8 +120,6 @@ class LocationAgentState(TypedDict, total=False):
     flow_from: Dict[str, Dict[str, float]]     # str(src) → {str(dst): flow}
 
     # ── Loaded by node_load_location_priors ──────────────────────────────
-    # Aggregated: str(dst) → {str(src): total_flow_across_24h}
-    flow_to:             Dict[str, Dict[str, float]]
     # hour → {int(dst_loc_id): total_flow_in at that hour}
     hourly_flow_in:      Dict[int, Dict[int, float]]
     # hour → {int(dst_loc_id): {int(src_loc_id): flow}}
